@@ -314,7 +314,7 @@ public class BorrowView extends JPanel {
         lineChartSoilTem.setBackground(Colour.FAFAFA);
         lineChartSoilTem.setMaxY(4000);
         lineChartSoilTem.setyAxisInterval(800);
-        lineChartSoilTem.setBounds(16 * 2 + (960/2 - 16 * 2),300,960/2 - 16 * 2,210);
+        lineChartSoilTem.setBounds(16 * 2 + (960/2 - 16 * 2),300 + 210 + 24,960/2 - 16 * 2,210);
         lineChartSoilTem.setDescribeText("土壤湿度折线图");
         lineChartSoilTem.setLineColor(Colour.C5AB556);
 
@@ -342,6 +342,7 @@ public class BorrowView extends JPanel {
         add(lineChartTem);
         add(lineChartLight);
         add(lineChartHum);
+        add(lineChartSoilTem);
 
         // 面板设置
         setSize(960, 768);
