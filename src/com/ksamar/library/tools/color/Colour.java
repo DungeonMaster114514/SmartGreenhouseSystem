@@ -14,7 +14,8 @@ public class Colour {
      * 颜色
      */
     public static final Color C3C8CE7 = new Color(60,140,231);
-    public static final Color F0F0F0 = new Color(210,210,210);
+    public static final Color F0F0F0 = new Color(130,130,130);
+    public static final Color F0F0F0Plus = new Color(240,240,240);
     public static final Color FAFAFA = new Color(250,250,250);
     public static final Color F2E900 = new Color(242,230,0);
     public static final Color EBEBEB = new Color(235,235,235);

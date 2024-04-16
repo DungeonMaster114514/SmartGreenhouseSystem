@@ -12,16 +12,17 @@ import java.util.List;
 public class LineChart extends JPanel {
     private List<Double> dataPointsX;
     private List<Double> dataPointsY;
+    private List<String> updateTime;
     private String describeText = "";
     private Color lineColor;
     private static final int PADDING = 24; // 定义边界间距
     private double maxY;
-    private int yAxisInterval; //y轴线的间隔
+    private int yAxisInterval;
 
     public LineChart() {
         //设置Y轴最大值
         maxY = 150;
-        yAxisInterval = 25; // Y 坐标轴每隔 25 的间隔
+        yAxisInterval = 25; //y轴线的间隔
         // 添加一些示例数据点
         addDataPoints();
     }
@@ -30,12 +31,14 @@ public class LineChart extends JPanel {
         // 初始化数据点
         dataPointsX = new ArrayList<>();
         dataPointsY = new ArrayList<>();
+        updateTime = new ArrayList<>();
 
         // 这里添加一些示例数据点
         for (int i = 0; i < 100; i++) {
             dataPointsX.add((double) i);
             // 确保 y 值不超过 maxY
             dataPointsY.add(Math.min(maxY, Math.cos(i)));
+            updateTime.add("");
         }
     }
 
@@ -43,12 +46,14 @@ public class LineChart extends JPanel {
         // 初始化数据点
         dataPointsX = new ArrayList<>();
         dataPointsY = new ArrayList<>();
+        updateTime = new ArrayList<>();
 
         // 这里添加一些示例数据点
         for (int i = 0; i < dashdoardList.size(); i++) {
             dataPointsX.add((double) i);
             // 确保 y 值不超过 150
             dataPointsY.add(Double.parseDouble(dashdoardList.get(i).getTemperature()));
+            updateTime.add(dashdoardList.get(i).getUpdateTime());
         }
     }
 
@@ -61,8 +66,39 @@ public class LineChart extends JPanel {
         // 这里添加一些示例数据点
         for (int i = 0; i < dashdoardList.size(); i++) {
             dataPointsX.add((double) i);
-            // 确保 y 值不超过 150
             dataPointsY.add(Double.parseDouble(dashdoardList.get(i).getHumidity()));
+        }
+    }
+
+    public void addDataPointsLight(List<Dashdoard> dashdoardList) {
+        // 初始化数据点
+        dataPointsX = new ArrayList<>();
+        dataPointsY = new ArrayList<>();
+
+
+        // 这里添加一些示例数据点
+        for (int i = 0; i < dashdoardList.size(); i++) {
+            dataPointsX.add((double) i);
+            dataPointsY.add(Double.parseDouble(dashdoardList.get(i).getLightIntensity()));
+        }
+    }
+
+    public void addDataPointsSoilTem(List<Dashdoard> dashdoardList) {
+        // 初始化数据点
+        dataPointsX = new ArrayList<>();
+        dataPointsY = new ArrayList<>();
+
+        for (int i = 0; i < dashdoardList.size(); i++) {
+            dataPointsX.add((double) i);
+            dataPointsY.add(Double.parseDouble(dashdoardList.get(i).getSoilTemperature()));
+        }
+    }
+
+    public void setUpdateTime(List<Dashdoard> dashdoardList){
+        updateTime = new ArrayList<>();
+
+        for (Dashdoard dashdoard : dashdoardList) {
+            updateTime.add(dashdoard.getUpdateTime());
         }
     }
 
@@ -81,9 +117,11 @@ public class LineChart extends JPanel {
         //绘制y坐标线
         g2.setColor(Colour.EBEBEB);
         int yAxisWidth = -(960/2) + 32 + 48; // Y 坐标轴线的宽度
-        for (int i = yAxisInterval; i <= maxY - 1; i += yAxisInterval) {
-            int y = height - PADDING - (int) ((i - getMinY()) / (getMaxY() - getMinY()) * (height - 2 * PADDING));
-            g2.drawLine(PADDING, y, PADDING - yAxisWidth, y); // 绘制 y 坐标轴线
+        FontMetrics fm = g2.getFontMetrics();
+
+        for (int i = 1; i < 6 ; i += 1) {
+            int y = getHeight()/6 * i;
+            g2.drawLine(PADDING - yAxisWidth, y, PADDING, y); // 绘制 y 坐标轴线
         }
 
         g2.setColor(lineColor);
@@ -104,6 +142,34 @@ public class LineChart extends JPanel {
             g2.drawLine(lastX, lastY, x, y);
             lastX = x;
             lastY = y;
+
+            //绘制x轴时间
+            if (updateTime.size() > i){
+                String[] parts = updateTime.get(i).split("-");
+                if (parts.length >= 3){
+                    String s = parts[1] + "-" + parts[2];
+                    if (s.charAt(0) == '0') {
+                        s = s.substring(1); // 去除第一个字符
+                    }
+                    if ((i + 1) % 5 == 0 && i - 1 > 0) {
+                        FontMetrics fontMetrics = getFontMetrics(g2.getFont()); // 获取字体度量
+                        int labelWidth = fontMetrics.stringWidth(s);
+                        g2.drawString(s, x - labelWidth / 2, 200);
+                    }
+                }
+            }
+        }
+
+        g2.setColor(Colour.F0F0F0);
+        g2.setFont(new Font(Font.SERIF, Font.BOLD, 10));
+        for (int i = 1; i < 6 ; i += 1) {
+            int y = getHeight()/6 * (6-i);
+
+            // 绘制数值标签
+            String value = String.valueOf(yAxisInterval * i);
+            FontMetrics fontMetrics = getFontMetrics(g2.getFont()); // 获取字体度量
+            int labelWidth = fontMetrics.stringWidth(String.valueOf(yAxisInterval * i));
+            g2.drawString(value, PADDING - yAxisWidth - labelWidth + labelWidth, y + fm.getHeight() / 2 - 5);
         }
 
         //绘制描述
@@ -113,15 +179,15 @@ public class LineChart extends JPanel {
     }
 
     private double getMinX() {
-        return dataPointsX.stream().min(Double::compareTo).orElse(0.0);
+        return 0;
     }
 
     private double getMaxX() {
-        return dataPointsX.stream().max(Double::compareTo).orElse(0.0);
+        return dataPointsX.size();
     }
 
     private double getMinY() {
-        return dataPointsY.stream().min(Double::compareTo).orElse(0.0);
+        return 0;
     }
 
     private double getMaxY() {
@@ -143,5 +209,6 @@ public class LineChart extends JPanel {
 
     public void setyAxisInterval(int yAxisInterval) {
         this.yAxisInterval = yAxisInterval;
+        System.out.println(yAxisInterval);
     }
 }

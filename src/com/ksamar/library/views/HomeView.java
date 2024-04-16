@@ -176,7 +176,7 @@ public class HomeView extends JPanel {
         // 图书数量面板 显示未检测图片面板
         bookPanel.setLayout(null);
         bookPanel.setBounds(16, 16, 456 -30, 425);//200
-        bookPanel.setBackground(Colour.F0F0F0);
+        bookPanel.setBackground(Colour.F0F0F0Plus);
         bookPanel.add(nextButton);
         bookPanel.add(imageTimeLabel);
         bookPanel.add(detectionButton);
@@ -225,7 +225,7 @@ public class HomeView extends JPanel {
         // 借阅图书数量面板
         borrowPanel.setLayout(null);
         borrowPanel.setBounds(488 + 30,16 , 456 - 30, 425);
-        borrowPanel.setBackground(Colour.C3C8CE7);
+        borrowPanel.setBackground(Colour.F0F0F0Plus);
         borrowPanel.add(borrowIconLabel);
 //        borrowPanel.add(borrowTextLabel);
 //        borrowPanel.add(borrowCountLabel);

@@ -286,7 +286,7 @@ public class BorrowView extends JPanel {
         lineChartTem = new LineChart();
         lineChartTem.setBackground(Colour.FAFAFA);
         lineChartTem.setMaxY(150);
-        lineChartTem.setyAxisInterval(30);
+        lineChartTem.setyAxisInterval(150/6);
         lineChartTem.setBounds(16,300,960/2 - 16 * 2,210);
         lineChartTem.setDescribeText("温度折线图");
         lineChartTem.setLineColor(Colour.C5AB556);
@@ -295,7 +295,7 @@ public class BorrowView extends JPanel {
         lineChartLight = new LineChart();
         lineChartLight.setBackground(Colour.FAFAFA);
         lineChartLight.setMaxY(2500);
-        lineChartLight.setyAxisInterval(500);
+        lineChartLight.setyAxisInterval(2500/6);
         lineChartLight.setBounds(16 * 2 + (960/2 - 16 * 2),300,960/2 - 16 * 2,210);
         lineChartLight.setDescribeText("光照强度折线图");
         lineChartLight.setLineColor(Colour.CFAA64B);
@@ -304,7 +304,7 @@ public class BorrowView extends JPanel {
         lineChartHum = new LineChart();
         lineChartHum.setBackground(Colour.FAFAFA);
         lineChartHum.setMaxY(200);
-        lineChartHum.setyAxisInterval(40);
+        lineChartHum.setyAxisInterval(200/6);
         lineChartHum.setBounds(16,300 + 210 + 24,960/2 - 16 * 2,210);
         lineChartHum.setDescribeText("湿度折线图");
         lineChartHum.setLineColor(Colour.C3C8CE7);
@@ -313,7 +313,7 @@ public class BorrowView extends JPanel {
         lineChartSoilTem = new LineChart();
         lineChartSoilTem.setBackground(Colour.FAFAFA);
         lineChartSoilTem.setMaxY(4000);
-        lineChartSoilTem.setyAxisInterval(800);
+        lineChartSoilTem.setyAxisInterval(4000/6);
         lineChartSoilTem.setBounds(16 * 2 + (960/2 - 16 * 2),300 + 210 + 24,960/2 - 16 * 2,210);
         lineChartSoilTem.setDescribeText("土壤湿度折线图");
         lineChartSoilTem.setLineColor(Colour.C5AB556);
@@ -428,6 +428,8 @@ public class BorrowView extends JPanel {
         //设置折线图数据
         lineChartTem.addDataPointsTem(dashdoardList);
         lineChartHum.addDataPointsHum(dashdoardList);
+        lineChartLight.addDataPointsLight(dashdoardList);
+        lineChartSoilTem.addDataPointsSoilTem(dashdoardList);
     }
 
     /**
