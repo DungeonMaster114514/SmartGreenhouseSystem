@@ -54,6 +54,9 @@ public class Images {
     public static ImageIcon arrowIcon;
     public static ImageIcon arrowIconGreen;
     public static Image bgImage;
+    public static Image weatherBgImage;
+    public static ImageIcon weatherBgIcon;
+
 
     /**
      * 图片设置
@@ -111,6 +114,9 @@ public class Images {
 
         arrowImageGreen = new ImageIcon(Objects.requireNonNull(Images.class.getResource(url + "right_arrow_green.png"))).getImage();
         arrowIconGreen = new ImageIcon(arrowImageGreen.getScaledInstance(76, 85, Image.SCALE_SMOOTH));
+
+        weatherBgImage = new ImageIcon(Objects.requireNonNull(Images.class.getResource(url + "weather_bg.png"))).getImage();
+        weatherBgIcon = new ImageIcon(weatherBgImage.getScaledInstance(464 - 16 * 2, 684 - 16 * 2 ,Image.SCALE_DEFAULT));
     }
 
     public static ImageIcon getImage(String url){
