@@ -4,6 +4,7 @@ import com.ksamar.library.entity.Dashdoard;
 import com.ksamar.library.entity.ImageMsg;
 import com.ksamar.library.tools.sql.SqlConnect;
 
+import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -19,7 +20,8 @@ public class DashdoardController {
         List<Dashdoard> dashdoardMsg = new ArrayList<>();
         try {
             // 执行语句
-            preparedStatement = SqlConnect.getConnection().prepareStatement(selectUserSql);
+            Connection connection = SqlConnect.getConnection();
+            preparedStatement = connection.prepareStatement(selectUserSql);
             resultSet = preparedStatement.executeQuery();
 
             while (resultSet.next()){
@@ -27,6 +29,9 @@ public class DashdoardController {
                         resultSet.getString("lightIntensity"),resultSet.getString("soilTemperature"),resultSet.getString("updateTime")));
             }
 
+            resultSet.close();
+            preparedStatement.close();
+            connection.close();
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
@@ -45,6 +50,7 @@ public class DashdoardController {
                 }
             }
         }
+
         return dashdoardMsg;
     }
 }

@@ -57,9 +57,7 @@ public class AdminView extends JFrame {
     private JButton hideButton = new JButton();
     private JButton closeButton = new JButton();
     private JButton homeButton = new JButton();
-    private JButton bookButton = new JButton();
     private JButton borrowButton = new JButton();
-    private JButton returnButton = new JButton();
     private JButton overtimeButton = new JButton();
     private JButton userButton = new JButton();
     private JButton systemButton = new JButton();
@@ -71,9 +69,7 @@ public class AdminView extends JFrame {
     private JPanel topPanel = new JPanel();
     private JPanel viewPanel = new JPanel();
     private HomeView homeView = new HomeView();
-    private BookView bookView = new BookView();
     private BorrowView borrowView = new BorrowView();
-    private ReturnView returnView = new ReturnView();
     private OvertimeView overtimeView = new OvertimeView();
     private UserView userView = new UserView();
     private SystemView systemView = new SystemView();
@@ -148,28 +144,11 @@ public class AdminView extends JFrame {
         homeButton.add(homeIconLabel);
         homeButton.add(homeTextLabel);
 
-        // 图书管理按钮
-        bookButton.setLayout(null);
-        bookButton.setBounds(0, 136, 240, 48);
-        bookButton.setForeground(Color.WHITE);
-        bookButton.setFont(Fonts.menuButton);
-        bookButton.setBackground(Colour.C3C8CE7);
-        bookButton.setFocusPainted(false);
-        bookButton.setBorder(null);
-        bookButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-        bookButton.addFocusListener(addFocus(bookButton));
-        bookIconLabel.setIcon(Images.bookIcon);
-        bookIconLabel.setBounds(16,0, 48, 48);
-        bookTextLabel.setText(bookText);
-        bookTextLabel.setFont(Fonts.menuButton);
-        bookTextLabel.setForeground(Color.WHITE);
-        bookTextLabel.setBounds(72, 0, 160, 48);
-        bookButton.add(bookIconLabel);
-        bookButton.add(bookTextLabel);
+        //y差56
 
         // 借阅图书按钮
         borrowButton.setLayout(null);
-        borrowButton.setBounds(0, 192, 240, 48);
+        borrowButton.setBounds(0, 192 - 56, 240, 48);
         borrowButton.setForeground(Color.WHITE);
         borrowButton.setFont(Fonts.menuButton);
         borrowButton.setBackground(Colour.C3C8CE7);
@@ -186,28 +165,9 @@ public class AdminView extends JFrame {
         borrowButton.add(borrowIconLabel);
         borrowButton.add(borrowTextLabel);
 
-        // 归还图书按钮
-        returnButton.setLayout(null);
-        returnButton.setBounds(0, 248, 240, 48);
-        returnButton.setForeground(Color.WHITE);
-        returnButton.setFont(Fonts.menuButton);
-        returnButton.setBackground(Colour.C3C8CE7);
-        returnButton.setFocusPainted(false);
-        returnButton.setBorder(null);
-        returnButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-        returnButton.addFocusListener(addFocus(returnButton));
-        returnIconLabel.setIcon(Images.returnIcon);
-        returnIconLabel.setBounds(16,0, 48, 48);
-        returnTextLabel.setText(returnText);
-        returnTextLabel.setFont(Fonts.menuButton);
-        returnTextLabel.setForeground(Color.WHITE);
-        returnTextLabel.setBounds(72, 0, 160, 48);
-        returnButton.add(returnIconLabel);
-        returnButton.add(returnTextLabel);
-
         // 超时查询按钮
         overtimeButton.setLayout(null);
-        overtimeButton.setBounds(0, 304, 240, 48);
+        overtimeButton.setBounds(0, 304 - 56 * 2, 240, 48);
         overtimeButton.setForeground(Color.WHITE);
         overtimeButton.setFont(Fonts.menuButton);
         overtimeButton.setBackground(Colour.C3C8CE7);
@@ -226,7 +186,7 @@ public class AdminView extends JFrame {
 
         // 用户管理按钮
         userButton.setLayout(null);
-        userButton.setBounds(0, 360, 240, 48);
+        userButton.setBounds(0, 360 - 56 * 2, 240, 48);
         userButton.setForeground(Color.WHITE);
         userButton.setFont(Fonts.menuButton);
         userButton.setBackground(Colour.C3C8CE7);
@@ -245,7 +205,7 @@ public class AdminView extends JFrame {
 
         // 系统管理按钮
         systemButton.setLayout(null);
-        systemButton.setBounds(0, 416, 240, 48);
+        systemButton.setBounds(0, 416 - 56 * 2, 240, 48);
         systemButton.setForeground(Color.WHITE);
         systemButton.setFont(Fonts.menuButton);
         systemButton.setBackground(Colour.C3C8CE7);
@@ -268,9 +228,7 @@ public class AdminView extends JFrame {
         navPanel.setBackground(Colour.C3C8CE7);
         navPanel.add(titleLabel);
         navPanel.add(homeButton);
-        navPanel.add(bookButton);
         navPanel.add(borrowButton);
-        navPanel.add(returnButton);
         navPanel.add(overtimeButton);
         navPanel.add(userButton);
         navPanel.add(systemButton);
@@ -280,9 +238,7 @@ public class AdminView extends JFrame {
         viewPanel.setBackground(Color.PINK);
         viewPanel.setLayout(new CardLayout());
         viewPanel.add(homeView, homeText);
-        viewPanel.add(bookView, bookText);
         viewPanel.add(borrowView, borrowText);
-        viewPanel.add(returnView, returnText);
         viewPanel.add(overtimeView, overtimeText);
         viewPanel.add(userView, userText);
         viewPanel.add(systemView, systemText);
@@ -338,14 +294,8 @@ public class AdminView extends JFrame {
                         icon.setIcon(Images.homeFocusIcon);
                         homeView.init();
                         break;
-                    case "图书管理":
-                        icon.setIcon(Images.bookFocusIcon);
-                        break;
                     case "借阅图书":
                         icon.setIcon(Images.borrowFocusIcon);
-                        break;
-                    case "归还图书":
-                        icon.setIcon(Images.returnFocusIcon);
                         break;
                     case "超时查询":
                         icon.setIcon(Images.overtimeFocusIcon);
@@ -388,14 +338,8 @@ public class AdminView extends JFrame {
                     case "主页":
                         icon.setIcon(Images.homeIcon);
                         break;
-                    case "图书管理":
-                        icon.setIcon(Images.bookIcon);
-                        break;
                     case "借阅图书":
                         icon.setIcon(Images.borrowIcon);
-                        break;
-                    case "归还图书":
-                        icon.setIcon(Images.returnIcon);
                         break;
                     case "超时查询":
                         icon.setIcon(Images.overtimeIcon);

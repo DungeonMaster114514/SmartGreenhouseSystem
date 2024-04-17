@@ -42,7 +42,6 @@ public class HomeView extends JPanel {
     /**
      * 文字
      */
-//    private String bookText = "图书馆书本数量";
     private String borrowText = "借出书本数量";
     private String logText = "操作日志";
 
@@ -64,11 +63,8 @@ public class HomeView extends JPanel {
     private JLabel bookTextLabel = new JLabel();
     private JLabel bookCountLabel = new JLabel();
     private JLabel borrowIconLabel = new JLabel();
-//    private JLabel borrowTextLabel = new JLabel();
     private JLabel imageTimeLabel = new JLabel();
     private JLabel borrowCountLabel = new JLabel();
-//    private JLabel overtimeIconLabel = new JLabel();
-//    private JLabel overtimeTextLabel = new JLabel();
     private JLabel overtimeCountLabel = new JLabel();
     private JLabel timeValueLabel = new JLabel();
     private JLabel logTextLabel = new JLabel();
@@ -173,7 +169,7 @@ public class HomeView extends JPanel {
         imageTimeLabel.setForeground(Colour.C5AB556);
         imageTimeLabel.setHorizontalAlignment(SwingConstants.RIGHT);
 
-        // 图书数量面板 显示未检测图片面板
+        // 显示未检测图片面板
         bookPanel.setLayout(null);
         bookPanel.setBounds(16, 16, 456 -30, 425);//200
         bookPanel.setBackground(Colour.F0F0F0Plus);
@@ -222,13 +218,11 @@ public class HomeView extends JPanel {
 //        borrowCountLabel.setForeground(Color.WHITE);
 //        borrowCountLabel.setHorizontalAlignment(SwingConstants.RIGHT);
 
-        // 借阅图书数量面板
+        // 显示检测后图片面板
         borrowPanel.setLayout(null);
         borrowPanel.setBounds(488 + 30,16 , 456 - 30, 425);
         borrowPanel.setBackground(Colour.F0F0F0Plus);
         borrowPanel.add(borrowIconLabel);
-//        borrowPanel.add(borrowTextLabel);
-//        borrowPanel.add(borrowCountLabel);
 
         // 日志信息文本
         logTextLabel.setText(logText);

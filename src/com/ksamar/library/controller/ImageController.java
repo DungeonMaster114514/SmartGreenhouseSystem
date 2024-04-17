@@ -3,6 +3,7 @@ package com.ksamar.library.controller;
 import com.ksamar.library.entity.ImageMsg;
 import com.ksamar.library.tools.sql.SqlConnect;
 
+import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -18,13 +19,17 @@ public class ImageController {
         List<ImageMsg> imageMsg = new ArrayList<>();
         try {
             // 执行语句
-            preparedStatement = SqlConnect.getConnection().prepareStatement(selectUserSql);
+            Connection connection = SqlConnect.getConnection();
+            preparedStatement = connection.prepareStatement(selectUserSql);
             resultSet = preparedStatement.executeQuery();
 
             while (resultSet.next()){
                 imageMsg.add(new ImageMsg(resultSet.getInt("id"), resultSet.getString("url"), resultSet.getString("description"),resultSet.getString("add_time")));
             }
 
+            resultSet.close();
+            preparedStatement.close();
+            connection.close();
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {

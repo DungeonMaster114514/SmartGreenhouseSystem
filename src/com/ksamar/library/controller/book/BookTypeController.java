@@ -35,8 +35,7 @@ public class BookTypeController {
                 BookType bookType = new BookType();
                 bookType.setTypeName(resultSet.getString("type_name"));
                 bookTypes.add(bookType);
-            }
-        } catch (SQLException e) {
+            }        } catch (SQLException e) {
             e.printStackTrace();
         } finally {
             if (preparedStatement != null) {
