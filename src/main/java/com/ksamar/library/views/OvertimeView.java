@@ -1,6 +1,9 @@
 package com.ksamar.library.views;
 
+import com.ksamar.library.tools.font.Fonts;
 import com.ksamar.library.tools.image.Images;
+import com.ksamar.library.tools.weather.WeatherMsg;
+import com.ksamar.library.tools.weather.WeatherService;
 
 import javax.swing.*;
 import java.awt.*;
@@ -20,7 +23,8 @@ public class OvertimeView extends JPanel {
     /**
      * 标签
      */
-    private JLabel weatherTextLabel = new JLabel();
+    private JLabel currentWeatherTextLabel = new JLabel();
+    private JLabel weatherIcon = new JLabel();
     private JLabel weatherBgIcon = new JLabel();
 
     /**
@@ -32,11 +36,25 @@ public class OvertimeView extends JPanel {
      * 超时查询面板
      */
     public OvertimeView() {
+        WeatherMsg weatherMsg = WeatherService.getCurrentWeather();
+        //当前温度标签
+        currentWeatherTextLabel.setText((int) weatherMsg.getTemperature() + "°");
+        currentWeatherTextLabel.setBounds(16 + 90 + 16,96 - 10, 150, 50);
+        currentWeatherTextLabel.setFont(Fonts.weather);
+        currentWeatherTextLabel.setForeground(Color.white);
+
+        //天气图标
+        ImageIcon imageIcon = Images.weatherIcon;
+        weatherIcon.setIcon(imageIcon);
+        weatherIcon.setBounds(16,96, 90, 90);
+
         //天气背景图
-        ImageIcon imageIcon = Images.weatherBgIcon;
-        weatherBgIcon.setIcon(imageIcon);
+        ImageIcon imageBgIcon = Images.weatherBgIcon;
+        weatherBgIcon.setIcon(imageBgIcon);
         weatherBgIcon.setHorizontalAlignment(JLabel.CENTER);
         weatherBgIcon.setVerticalAlignment(JLabel.CENTER);
+        weatherBgIcon.add(currentWeatherTextLabel);
+        weatherBgIcon.add(weatherIcon);
 
         // 天气信息面版
         weatherPane.setBounds(16,42, 464 - 8, 684);

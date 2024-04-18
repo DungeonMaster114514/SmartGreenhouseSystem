@@ -56,6 +56,8 @@ public class Images {
     public static Image bgImage;
     public static Image weatherBgImage;
     public static ImageIcon weatherBgIcon;
+    public static Image weatherImage;
+    public static ImageIcon weatherIcon;
 
 
     /**
@@ -115,8 +117,11 @@ public class Images {
         arrowImageGreen = new ImageIcon(Objects.requireNonNull(Images.class.getResource(url + "right_arrow_green.png"))).getImage();
         arrowIconGreen = new ImageIcon(arrowImageGreen.getScaledInstance(76, 85, Image.SCALE_SMOOTH));
 
-        weatherBgImage = new ImageIcon(Objects.requireNonNull(Images.class.getResource(url + "weather_bg.png"))).getImage();
-        weatherBgIcon = new ImageIcon(weatherBgImage.getScaledInstance(464 - 16 * 2, 684 - 16 * 2 ,Image.SCALE_DEFAULT));
+        weatherBgImage = new ImageIcon(Objects.requireNonNull(Images.class.getResource(url + "Mist_2011.png"))).getImage();
+        weatherBgIcon = new ImageIcon(weatherBgImage.getScaledInstance(464 - 16, 692 - 16 ,Image.SCALE_SMOOTH));
+
+        weatherImage = new ImageIcon(Objects.requireNonNull(Images.class.getResource(url + "weather.png"))).getImage();
+        weatherIcon = new ImageIcon(weatherImage.getScaledInstance(90, 90 ,Image.SCALE_SMOOTH));
     }
 
     public static ImageIcon getImage(String url){

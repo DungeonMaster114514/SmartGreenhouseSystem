@@ -61,7 +61,7 @@ public class BorrowView extends JPanel {
         tickLeft1 = new Tick();
         tickLeft1.setForeground(Colour.C3C8CE7);
         tickLeft1.setType(Tick.RING_240);
-        tickLeft1.setDescribe("实时温度");
+        tickLeft1.setDescribe("实时温度(℃)");
         tickLeft1.setFrom(0);
         tickLeft1.setTo(150);
         tickLeft1.setMajor(15);
@@ -72,7 +72,7 @@ public class BorrowView extends JPanel {
         tickLeft2 = new Tick();
         tickLeft2.setForeground(Colour.C3C8CE7);
         tickLeft2.setType(Tick.RING_240);
-        tickLeft2.setDescribe("实时湿度");
+        tickLeft2.setDescribe("实时湿度(%)");
         tickLeft2.setFrom(0);
         tickLeft2.setTo(200);
         tickLeft2.setMajor(20);
@@ -82,7 +82,7 @@ public class BorrowView extends JPanel {
         tickRight1 = new Tick();
         tickRight1.setForeground(Colour.C3C8CE7);
         tickRight1.setType(Tick.RING_240);
-        tickRight1.setDescribe("实时光照强度");
+        tickRight1.setDescribe("实时光照强度(Lux)");
         tickRight1.setFrom(0);
         tickRight1.setTo(2500);
         tickRight1.setMajor(500);
@@ -92,7 +92,7 @@ public class BorrowView extends JPanel {
         tickRight2 = new Tick();
         tickRight2.setForeground(Colour.C3C8CE7);
         tickRight2.setType(Tick.RING_240);
-        tickRight2.setDescribe("实时土壤湿度");
+        tickRight2.setDescribe("实时土壤湿度(%)");
         tickRight2.setTo(4000);
         tickRight2.setMajor(800);
         tickRight2.setMinor(40);
@@ -150,7 +150,7 @@ public class BorrowView extends JPanel {
             protected Void doInBackground() throws Exception {
                 while (!isCancelled()) {
                     // 每隔1秒执行指定方法
-                    Thread.sleep(1000);
+                    Thread.sleep(500);
                     // 调用指定方法
                     doSomething();
                 }
