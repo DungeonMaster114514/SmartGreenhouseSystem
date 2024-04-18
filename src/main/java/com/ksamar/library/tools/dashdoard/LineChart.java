@@ -244,6 +244,5 @@ public class LineChart extends JPanel {
 
     public void setyAxisInterval(int yAxisInterval) {
         this.yAxisInterval = yAxisInterval;
-        System.out.println(yAxisInterval);
     }
 }

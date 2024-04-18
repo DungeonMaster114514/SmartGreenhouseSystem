@@ -62,13 +62,16 @@ public class WeatherService {
             //当前wind
             JSONObject windObject = new JSONObject(realObject.optString("wind"));
 
+            //当前空气质量
+            JSONObject airObject = new JSONObject(dataObject.optString("air"));
+
             //获取时间publish_time
             String publish_time = realObject.getString("publish_time");
 
             weatherMsg = new WeatherMsg(stationObject.getString("city"), weatherObject.getFloat("temperature"),
-                    weatherObject.getString("info"), windObject.getString("direct") + " " + windObject.getString("power"), publish_time);
+                    weatherObject.getString("info"), windObject.getString("direct") + " " + windObject.getString("power"), airObject.getString("text"), publish_time);
         } catch (IOException e) {
-            weatherMsg = new WeatherMsg("信息获取失败",0,"信息获取失败","信息获取失败","信息获取失败");
+            weatherMsg = new WeatherMsg("信息获取失败",0,"信息获取失败","信息获取失败","信息获取失败","信息获取失败");
         }
 
         return weatherMsg;

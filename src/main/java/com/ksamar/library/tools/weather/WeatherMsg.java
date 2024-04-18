@@ -5,13 +5,15 @@ public class WeatherMsg {
     private float temperature; //温度
     private String info; //天气信息
     private String windDirect; //风向.
+    private String air; // 空气质量.0
     private String updateTime; //信息获取时间
 
-    public WeatherMsg(String stationCity, float temperature, String info, String windDirect, String updateTime) {
+    public WeatherMsg(String stationCity, float temperature, String info, String windDirect, String air, String updateTime) {
         this.stationCity = stationCity;
         this.temperature = temperature;
         this.info = info;
         this.windDirect = windDirect;
+        this.air = air;
         this.updateTime = updateTime;
     }
 
@@ -55,6 +57,14 @@ public class WeatherMsg {
         this.updateTime = updateTime;
     }
 
+    public String getAir() {
+        return air;
+    }
+
+    public void setAir(String air) {
+        this.air = air;
+    }
+
     @Override
     public String toString() {
         return "WeatherMsg{" +
@@ -62,6 +72,7 @@ public class WeatherMsg {
                 ", temperature=" + temperature +
                 ", info='" + info + '\'' +
                 ", windDirect='" + windDirect + '\'' +
+                ", air='" + air + '\'' +
                 ", updateTime='" + updateTime + '\'' +
                 '}';
     }

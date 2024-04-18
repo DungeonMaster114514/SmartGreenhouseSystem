@@ -32,6 +32,7 @@ public class Fonts {
     public static Font errorMessage;
     public static Font weatherTem;
     public static Font weather;
+    public static Font weatherSmall;
 
     static {
         menu = new Font(FONT_NAME, Font.PLAIN, 12);
@@ -45,8 +46,9 @@ public class Fonts {
         time = new Font(FONT_NAME, Font.PLAIN, 24);
         comboBox = new Font(FONT_NAME, Font.PLAIN, 14);
         pageLabel = new Font(FONT_NAME, Font.PLAIN, 16);
-        weatherTem = new Font("Gothic Light", Font.PLAIN, 50);
-        weather = new Font("黑体", Font.BOLD, 28);
+        weatherTem = new Font("Gothic Light", Font.PLAIN, 46);
+        weather = new Font("黑体", Font.BOLD, 24);
+        weatherSmall = new Font("黑体", Font.PLAIN, 22);
         message = loginMessage;
         errorMessage = loginMessage;
     }
