@@ -117,8 +117,8 @@ public class Images {
         arrowImageGreen = new ImageIcon(Objects.requireNonNull(Images.class.getResource(url + "right_arrow_green.png"))).getImage();
         arrowIconGreen = new ImageIcon(arrowImageGreen.getScaledInstance(76, 85, Image.SCALE_SMOOTH));
 
-        weatherBgImage = new ImageIcon(Objects.requireNonNull(Images.class.getResource(url + "Mist_2011.png"))).getImage();
-        weatherBgIcon = new ImageIcon(weatherBgImage.getScaledInstance(464 - 16, 692 - 16 ,Image.SCALE_SMOOTH));
+        weatherBgImage = new ImageIcon(Objects.requireNonNull(Images.class.getResource(url + "Mist2.png"))).getImage();
+        weatherBgIcon = new ImageIcon(weatherBgImage.getScaledInstance(464 - 16 + 4, 692 - 16 ,Image.SCALE_SMOOTH));
 
         weatherImage = new ImageIcon(Objects.requireNonNull(Images.class.getResource(url + "weather.png"))).getImage();
         weatherIcon = new ImageIcon(weatherImage.getScaledInstance(90, 90 ,Image.SCALE_SMOOTH));
