@@ -9,6 +9,6 @@ import com.ksamar.library.views.LoginView;
  */
 public class Application {
     public static void main(String[] args) {
-        new LoginView("图书管理系统");
+        new LoginView("智慧大棚系统");
     }
 }

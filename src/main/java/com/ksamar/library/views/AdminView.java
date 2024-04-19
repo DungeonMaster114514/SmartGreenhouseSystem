@@ -22,12 +22,12 @@ public class AdminView extends JFrame {
      * 文字
      */
     private String titleText = "图书管理系统";
-    private String subTitleText = "主页";
-    private String homeText = "主页";
+    private String subTitleText = "病虫害检测";
+    private String homeText = "病虫害检测";
     private String bookText = "图书管理";
-    private String borrowText = "借阅图书";
+    private String borrowText = "数据监测";
     private String returnText = "归还图书";
-    private String overtimeText = "超时查询";
+    private String overtimeText = "病虫害检测页面";
     private String userText = "用户管理";
     private String systemText = "系统管理";
 
@@ -125,7 +125,7 @@ public class AdminView extends JFrame {
         titleLabel.setForeground(Color.WHITE);
         titleLabel.setHorizontalAlignment(SwingConstants.CENTER);
 
-        // 主页按钮
+        // 病虫害检测按钮
         homeButton.setLayout(null);
         homeButton.setBounds(0, 80, 240, 48);
         homeButton.setForeground(Colour.C3C8CE7);
@@ -146,7 +146,7 @@ public class AdminView extends JFrame {
 
         //y差56
 
-        // 借阅图书按钮
+        // 数据监测按钮
         borrowButton.setLayout(null);
         borrowButton.setBounds(0, 192 - 56, 240, 48);
         borrowButton.setForeground(Color.WHITE);
@@ -165,7 +165,7 @@ public class AdminView extends JFrame {
         borrowButton.add(borrowIconLabel);
         borrowButton.add(borrowTextLabel);
 
-        // 超时查询按钮
+        // 病虫害检测页面按钮
         overtimeButton.setLayout(null);
         overtimeButton.setBounds(0, 304 - 56 * 2, 240, 48);
         overtimeButton.setForeground(Color.WHITE);
@@ -290,14 +290,14 @@ public class AdminView extends JFrame {
 
                 // 切换按钮样式
                 switch (labelText) {
-                    case "主页":
+                    case "病虫害检测":
                         icon.setIcon(Images.homeFocusIcon);
                         homeView.init();
                         break;
-                    case "借阅图书":
+                    case "数据监测":
                         icon.setIcon(Images.borrowFocusIcon);
                         break;
-                    case "超时查询":
+                    case "病虫害检测页面":
                         icon.setIcon(Images.overtimeFocusIcon);
                         break;
                     case "用户管理":
@@ -313,7 +313,7 @@ public class AdminView extends JFrame {
                 // 设置副标题
                 subTitleLabel.setText(labelText);
 
-                // 判断第一次点击的是否是主页按钮
+                // 判断第一次点击的是否是病虫害检测按钮
                 if (!labelText.equals(homeText)) {
                     homeView.setVisible(false);
                     homeIconLabel.setIcon(Images.homeIcon);
@@ -335,13 +335,13 @@ public class AdminView extends JFrame {
 
                 // 切换按钮样式
                 switch (labelText) {
-                    case "主页":
+                    case "病虫害检测":
                         icon.setIcon(Images.homeIcon);
                         break;
-                    case "借阅图书":
+                    case "数据监测":
                         icon.setIcon(Images.borrowIcon);
                         break;
-                    case "超时查询":
+                    case "病虫害检测页面":
                         icon.setIcon(Images.overtimeIcon);
                         break;
                     case "用户管理":
