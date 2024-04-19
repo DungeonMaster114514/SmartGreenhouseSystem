@@ -58,6 +58,7 @@ public class Images {
     public static ImageIcon weatherBgIcon;
     public static Image weatherImage;
     public static ImageIcon weatherIcon;
+    public static ImageIcon weatherSmallIcon;
 
 
     /**
@@ -122,6 +123,8 @@ public class Images {
 
         weatherImage = new ImageIcon(Objects.requireNonNull(Images.class.getResource(url + "weather.png"))).getImage();
         weatherIcon = new ImageIcon(weatherImage.getScaledInstance(90, 90 ,Image.SCALE_SMOOTH));
+
+        weatherSmallIcon = new ImageIcon(weatherImage.getScaledInstance(60, 60 ,Image.SCALE_SMOOTH));
     }
 
     public static ImageIcon getImage(String url){

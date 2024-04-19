@@ -32,6 +32,7 @@ public class Fonts {
     public static Font errorMessage;
     public static Font weatherTem;
     public static Font weather;
+    public static Font weather2;
     public static Font weatherSmall;
 
     static {
@@ -48,6 +49,7 @@ public class Fonts {
         pageLabel = new Font(FONT_NAME, Font.PLAIN, 16);
         weatherTem = new Font("Gothic Light", Font.PLAIN, 46);
         weather = new Font("黑体", Font.BOLD, 24);
+        weather2 = new Font("等线", Font.PLAIN, 24);
         weatherSmall = new Font("黑体", Font.PLAIN, 22);
         message = loginMessage;
         errorMessage = loginMessage;

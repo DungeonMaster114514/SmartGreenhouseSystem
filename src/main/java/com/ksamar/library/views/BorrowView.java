@@ -144,7 +144,7 @@ public class BorrowView extends JPanel {
         // 获取 仪表盘/折线图 数据
         dashdoardGet();
 
-        // 创建SwingWorker线程,每隔一秒执行指定方法
+        // 创建SwingWorker线程,每隔0.5秒执行指定方法
          worker = new SwingWorker<>() {
             @Override
             protected Void doInBackground() throws Exception {

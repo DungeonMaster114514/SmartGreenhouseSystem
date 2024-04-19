@@ -9,6 +9,8 @@ import org.json.JSONObject;
 import java.io.IOException;
 import java.sql.Time;
 import java.sql.Timestamp;
+import java.util.ArrayList;
+import java.util.List;
 
 public class WeatherService {
 
@@ -77,11 +79,36 @@ public class WeatherService {
         return weatherMsg;
     }
 
+    public static List<WeatherMsgTiny> getWeatherList(){
+        WeatherService service = new WeatherService();
+        List<WeatherMsgTiny> list = new ArrayList<>();
+        try {
+            JSONObject weatherInfo = service.getWeatherInfo("58607");
+
+            JSONObject dataObject = weatherInfo.optJSONObject("data");
+
+            //获取今天与未来六天的天气
+            JSONArray tempchartArray = new JSONArray(dataObject.optString("tempchart"));
+
+
+            for (int i = 7 ; i <= 9 ; i++){
+                JSONObject obj = new JSONObject(tempchartArray.get(i).toString());
+                WeatherMsgTiny weatherMsgTiny = new WeatherMsgTiny(obj.getFloat("max_temp"),obj.getFloat("min_temp"),obj.getString("night_text"));
+                list.add(weatherMsgTiny);
+            }
+
+        } catch (IOException e) {
+        e.printStackTrace();
+        }
+
+        return list;
+    }
+
     // 测试方法
     public static void main(String[] args) {
 //        WeatherService service = new WeatherService();
 //        try {
-////             用实际的城市代码替换"cityCodeHere"
+//             用实际的城市代码替换"cityCodeHere"
 //            JSONObject weatherInfo = service.getWeatherInfo("58607");
 //
 //            System.out.println(weatherInfo.toString(4));
@@ -91,8 +118,8 @@ public class WeatherService {
 //                JSONObject predictObject = new JSONObject(dataObject.optString("predict"));
 //
 //                //获取今天与未来六天的天气
-//                JSONArray detailArray = new JSONArray(predictObject.optString("detail"));
-//                System.out.println(detailArray.get(0));
+//                JSONArray detailArray = new JSONArray(dataObject.optString("tempchart"));
+//                System.out.println(detailArray.get(7));
 //
 //                JSONObject realObject = new JSONObject(dataObject.optString("real"));
 //                System.out.println(realObject.toString(4));
@@ -107,5 +134,8 @@ public class WeatherService {
 //        }
 
             System.out.println(WeatherService.getCurrentWeather());
+//        for (WeatherMsgTiny weatherMsgTiny: getWeatherList()) {
+//            System.out.println(weatherMsgTiny);
+//        }
     }
 }
