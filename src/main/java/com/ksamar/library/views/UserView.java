@@ -73,7 +73,7 @@ public class UserView extends JPanel {
     /**
      * 表格模型
      */
-    String[] name = {"Id", "组名", "姓名", "用户名", "密码", "性别", "借书卡号", "手机号", "身份", "可借书数量", "状态"};
+    String[] name = {"Id", "组名", "姓名", "用户名", "密码", "性别", "手机号", "身份", "状态"};
     Object[][] tableDate = new Object[0][0];
     private LibraryTableModel tableModel = new LibraryTableModel(tableDate, name);
 
@@ -97,8 +97,6 @@ public class UserView extends JPanel {
         // 搜索选项栏
         searchComboBox.setBounds(190, 0, 150, 32);
         searchComboBox.addItem("用户名");
-        searchComboBox.addItem("借书卡号");
-        searchComboBox.addItem("手机号");
         searchComboBox.setBackground(Color.WHITE);
         searchComboBox.setFont(Fonts.comboBox);
         searchComboBox.addActionListener(searchChange());
@@ -267,14 +265,6 @@ public class UserView extends JPanel {
             switch (index) {
                 case 0:
                     searchType = "用户名";
-                    break;
-                case 1:
-                    searchType = "借书卡号";
-                    break;
-                case 2:
-                    searchType = "手机号";
-                    break;
-                default:
                     break;
             }
         };

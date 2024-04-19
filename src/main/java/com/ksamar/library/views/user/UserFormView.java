@@ -25,7 +25,6 @@ public class UserFormView extends JFrame {
     public String passwordText = "密码";
     public String nameText = "姓名";
     public String genderText = "性别";
-    public String idCardText = "借阅卡号";
     public String phoneText = "手机号";
     public String identityText = "身份";
 
@@ -154,17 +153,6 @@ public class UserFormView extends JFrame {
         genderComboBox.addItem("女");
         genderComboBox.setBackground(Color.WHITE);
         genderComboBox.setFont(Fonts.comboBox);
-
-        // 借阅卡文本
-        idCardTextLabel.setText(idCardText);
-        idCardTextLabel.setBounds(50, 304, 90, 32);
-        idCardTextLabel.setFont(Fonts.subTitle);
-        idCardTextLabel.setHorizontalAlignment(SwingConstants.RIGHT);
-
-        // 借阅卡输入框
-        idCardField.setBounds(150, 304, 300, 32);
-        idCardField.setBorder(Borders.textFiledBorder);
-        idCardField.setFont(Fonts.textField);
 
         // 手机号文本
         phoneTextLabel.setText(phoneText);

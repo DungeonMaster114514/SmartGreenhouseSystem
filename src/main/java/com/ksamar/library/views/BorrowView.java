@@ -1,7 +1,6 @@
 package com.ksamar.library.views;
 
 import com.ksamar.library.controller.DashdoardController;
-import com.ksamar.library.entity.Book;
 import com.ksamar.library.entity.Dashdoard;
 import com.ksamar.library.tools.color.Colour;
 import com.ksamar.library.tools.dashdoard.DataTransition;

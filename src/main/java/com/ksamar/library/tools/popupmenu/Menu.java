@@ -19,7 +19,7 @@ public class Menu {
     /**
      * 文字
      */
-    private static String toolTipText = "图书管理系统";
+    private static String toolTipText = "智慧大棚系统";
     private static String closeText = "退出系统";
     private static String openText = "打开主面板";
 

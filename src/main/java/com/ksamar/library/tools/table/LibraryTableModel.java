@@ -1,7 +1,5 @@
 package com.ksamar.library.tools.table;
 
-import com.ksamar.library.entity.Book;
-import com.ksamar.library.entity.Borrow;
 import com.ksamar.library.entity.Log;
 import com.ksamar.library.entity.User;
 
@@ -56,44 +54,6 @@ public class LibraryTableModel extends DefaultTableModel {
     }
 
     /**
-     * 添加图书数据
-     * @param bookArrayList 图书信息列表
-     */
-    public void addBookRow(List<Book> bookArrayList) {
-        for (Book book : bookArrayList) {
-            Object[] objects = new Object[8];
-            objects[0] = book.getId();
-            objects[1] = book.getGroups();
-            objects[2] = book.getName();
-            objects[3] = book.getAuthor();
-            objects[4] = book.getPress();
-            objects[5] = book.getPrice();
-            objects[6] = book.getQuantity();
-            objects[7] = book.getIsbn();
-            addRow(objects);
-        }
-    }
-
-    /**
-     * 添加借阅数据
-     * @param borrowArrayList 借阅信息列表
-     */
-    public void addBorrowRow(List<Borrow> borrowArrayList) {
-        for (Borrow borrow : borrowArrayList) {
-            Object[] objects = new Object[8];
-            objects[0] = borrow.getId();
-            objects[1] = borrow.getBookName();
-            objects[2] = borrow.getIsbn();
-            objects[3] = borrow.getUsername();
-            objects[4] = borrow.getIdCard();
-            objects[5] = borrow.getPhone();
-            objects[6] = formatter.format(borrow.getBorrowTime());
-            objects[7] = formatter.format(borrow.getReturnTime());
-            addRow(objects);
-        }
-    }
-
-    /**
      * 添加用户数据
      * @param userArrayList 用户信息列表
      */
@@ -106,11 +66,9 @@ public class LibraryTableModel extends DefaultTableModel {
             objects[3] = user.getUsername();
             objects[4] = user.getPassword();
             objects[5] = user.getGender();
-            objects[6] = user.getIdCard();
-            objects[7] = user.getPhone();
-            objects[8] = user.getIdentity();
-            objects[9] = user.getBookCount();
-            objects[10] = getState(String.valueOf(user.getState()));
+            objects[6] = user.getPhone();
+            objects[7] = user.getIdentity();
+            objects[8] = getState(String.valueOf(user.getState()));
             addRow(objects);
         }
     }

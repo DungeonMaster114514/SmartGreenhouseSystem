@@ -21,7 +21,7 @@ public class LoginView extends JFrame {
     /**
      * 标题信息
      */
-    private String subTitle = "图书管理系统-登录";
+    private String subTitle = "智慧大棚系统-登录";
 
     /**
      * 组件信息

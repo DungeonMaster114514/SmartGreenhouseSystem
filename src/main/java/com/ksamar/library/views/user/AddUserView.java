@@ -44,10 +44,8 @@ public class AddUserView extends UserFormView {
             user.setUsername(usernameField.getText());
             user.setPassword(String.valueOf(passwordField.getPassword()));
             user.setGender(String.valueOf(genderComboBox.getSelectedItem()));
-            user.setIdCard(idCardField.getText());
             user.setPhone(phoneField.getText());
             user.setIdentity(String.valueOf(identityComboBox.getSelectedItem()));
-            user.setBookCount(3);
             user.setState(1);
 
             int result = UserContoller.addUser(user);
@@ -62,9 +60,6 @@ public class AddUserView extends UserFormView {
             }
             else if (result == 2) {
                 Message.showMessage("用户名已存在", "错误", 0);
-            }
-            else if (result == 3) {
-                Message.showMessage("借书卡号已存在", "错误", 0);
             }
             else if (result == 4) {
                 Message.showMessage("手机号已存在", "错误", 0);

@@ -199,53 +199,6 @@ public class UserContoller {
     }
 
     /**
-     * 搜索用户
-     * @param username 用户名
-     * @param idCard 借书卡号
-     * @param phone 手机号
-     * @return User
-     */
-    public static User searchUserByUsernameAndIdCardAndPhone(String username, String idCard, String phone) {
-        User user = null;
-
-        // 搜索用户语句
-        String searchUserByUsernameAndIdCardAndPhoneSql = "select * from userlist where" +
-                " username=? and id_card=? and phone=?";
-        PreparedStatement preparedStatement = null;
-        ResultSet resultSet = null;
-
-        try {
-            preparedStatement = SqlConnect.getConnection().prepareStatement(searchUserByUsernameAndIdCardAndPhoneSql);
-            preparedStatement.setString(1, username);
-            preparedStatement.setString(2, idCard);
-            preparedStatement.setString(3, phone);
-            resultSet = preparedStatement.executeQuery();
-            if (resultSet.next()) {
-                user = setUserInfo(resultSet);
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } finally {
-            if (preparedStatement != null) {
-                try {
-                    preparedStatement.close();
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
-            }
-            if (resultSet != null) {
-                try {
-                    resultSet.close();
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
-            }
-        }
-
-        return user;
-    }
-
-    /**
      * 以用户名方式搜索用户
      * @param username 用户名
      * @return User
@@ -261,48 +214,6 @@ public class UserContoller {
         try {
             preparedStatement = SqlConnect.getConnection().prepareStatement(searchUserByUsernameSql);
             preparedStatement.setString(1, username);
-            resultSet = preparedStatement.executeQuery();
-            if (resultSet.next()) {
-                user = setUserInfo(resultSet);
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } finally {
-            if (preparedStatement != null) {
-                try {
-                    preparedStatement.close();
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
-            }
-            if (resultSet != null) {
-                try {
-                    resultSet.close();
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
-            }
-        }
-
-        return user;
-    }
-
-    /**
-     * 以借书卡方式搜索用户
-     * @param idCard 借书卡
-     * @return User
-     */
-    public static User searchUserByIdCard(String idCard) {
-        User user = null;
-
-        // 搜索用户语句
-        String searchUserByIdCardSql = "select * from userlist where id_card = ?";
-        PreparedStatement preparedStatement = null;
-        ResultSet resultSet = null;
-
-        try {
-            preparedStatement = SqlConnect.getConnection().prepareStatement(searchUserByIdCardSql);
-            preparedStatement.setString(1, idCard);
             resultSet = preparedStatement.executeQuery();
             if (resultSet.next()) {
                 user = setUserInfo(resultSet);
@@ -376,7 +287,6 @@ public class UserContoller {
      * 0 - 添加失败
      * 1 - 添加成功
      * 2 - 用户名存在
-     * 3 - 借书卡号存在
      * 4 - 手机号存在
      * @param user 用户
      * @return 添加状态
@@ -390,12 +300,6 @@ public class UserContoller {
             return 2;
         }
 
-        // 判断借书卡号是否存在
-        tempUser = searchUserByIdCard(user.getIdCard());
-        if (tempUser != null) {
-            return 3;
-        }
-
         // 判断手机号是否存在
         tempUser = searchUserByPhone(user.getPhone());
         if (tempUser != null) {
@@ -403,8 +307,8 @@ public class UserContoller {
         }
 
         // 插入用户语句
-        String insertUser = "insert into userlist(groups, name, username, password, gender, id_card, phone, identity," +
-                " book_count, state) VALUE (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        String insertUser = "insert into userlist(groups, name, username, password, gender, phone, identity," +
+                " state) VALUE (?, ?, ?, ?, ?, ?, ?, ?)";
         PreparedStatement preparedStatement = null;
 
         try {
@@ -414,11 +318,9 @@ public class UserContoller {
             preparedStatement.setString(3, user.getUsername());
             preparedStatement.setString(4, user.getPassword());
             preparedStatement.setString(5, user.getGender());
-            preparedStatement.setString(6, user.getIdCard());
-            preparedStatement.setString(7, user.getPhone());
-            preparedStatement.setString(8, user.getIdentity());
-            preparedStatement.setInt(9, user.getBookCount());
-            preparedStatement.setInt(10, user.getState());
+            preparedStatement.setString(6, user.getPhone());
+            preparedStatement.setString(7, user.getIdentity());
+            preparedStatement.setInt(8, user.getState());
             result = preparedStatement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -454,12 +356,6 @@ public class UserContoller {
             return 2;
         }
 
-        // 判断借书卡号是否存在
-        tempUser = searchUserByIdCard(user.getIdCard());
-        if (tempUser != null && !tempUser.getId().equals(user.getId())) {
-            return 3;
-        }
-
         // 判断手机号是否存在
         tempUser = searchUserByPhone(user.getPhone());
         if (tempUser != null && !tempUser.getId().equals(user.getId())) {
@@ -468,7 +364,7 @@ public class UserContoller {
 
         // 更新用户语句
         String editUserSql = "update userlist set groups = ?, name = ?, username = ?, password = ?, gender = ?," +
-                " id_card = ?, phone = ?, identity = ?, book_count = ?, state = ? where id = ?";
+                "phone = ?, identity = ?, state = ? where id = ?";
         PreparedStatement preparedStatement = null;
 
         try {
@@ -478,12 +374,10 @@ public class UserContoller {
             preparedStatement.setString(3, user.getUsername());
             preparedStatement.setString(4, user.getPassword());
             preparedStatement.setString(5, user.getGender());
-            preparedStatement.setString(6, user.getIdCard());
-            preparedStatement.setString(7, user.getPhone());
-            preparedStatement.setString(8, user.getIdentity());
-            preparedStatement.setInt(9, user.getBookCount());
-            preparedStatement.setInt(10, user.getState());
-            preparedStatement.setInt(11, user.getId());
+            preparedStatement.setString(6, user.getPhone());
+            preparedStatement.setString(7, user.getIdentity());
+            preparedStatement.setInt(8, user.getState());
+            preparedStatement.setInt(9, user.getId());
             result = preparedStatement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -584,10 +478,8 @@ public class UserContoller {
         user.setUsername(resultSet.getString("username"));
         user.setPassword(resultSet.getString("password"));
         user.setGender(resultSet.getString("gender"));
-        user.setIdCard(resultSet.getString("id_card"));
         user.setPhone(resultSet.getString("phone"));
         user.setIdentity(resultSet.getString("identity"));
-        user.setBookCount(resultSet.getInt("book_count"));
         user.setState(resultSet.getInt("state"));
         return user;
     }
@@ -601,8 +493,6 @@ public class UserContoller {
         switch (searchType) {
             case "用户名":
                 return "username";
-            case "借书卡号":
-                return "id_card";
             case "手机号":
                 return "phone";
             default:

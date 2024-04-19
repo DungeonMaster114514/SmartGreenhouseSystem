@@ -1,6 +1,5 @@
 package com.ksamar.library.tools.form;
 
-import com.ksamar.library.views.book.BookFormView;
 import com.ksamar.library.views.message.Message;
 import com.ksamar.library.views.user.UserFormView;
 
@@ -10,48 +9,6 @@ import com.ksamar.library.views.user.UserFormView;
  * @version 1.0
  */
 public class CheckFormTool {
-
-    /**
-     * 检查图书表单
-     */
-    public static boolean checkBookForm(BookFormView bookFormView) {
-        if ("".equals(bookFormView.groupsComboBox.getSelectedItem()) || "请选择组别".equals(bookFormView.groupsComboBox.getSelectedItem())) {
-            Message.showMessage("请选择组别", "错误", 0);
-        }
-        else if ("".equals(bookFormView.bookNameField.getText())) {
-            Message.showMessage("请输入书名", "错误", 0);
-        }
-        else if ("".equals(bookFormView.bookAuthorField.getText())) {
-            Message.showMessage("请输入作者", "错误", 0);
-        }
-        else if ("".equals(bookFormView.bookPressField.getText())) {
-            Message.showMessage("请输入出版社", "错误", 0);
-        }
-        else if ("".equals(bookFormView.bookPriceField.getText())) {
-            Message.showMessage("请输入价格", "错误", 0);
-        }
-        else if ("".equals(bookFormView.bookCountField.getText())) {
-            Message.showMessage("请输入数量", "错误", 0);
-        }
-        else if ("".equals(bookFormView.bookIsbnField.getText())) {
-            Message.showMessage("请输入ISBN号码", "错误", 0);
-        }
-        else if (!CheckFormTool.checkPrice(bookFormView.bookPriceField.getText())) {
-            Message.showMessage("请输入正确的价格", "错误", 0);
-        }
-        else if (!CheckFormTool.checkCount(bookFormView.bookCountField.getText())) {
-            Message.showMessage("请输入正确的数量", "错误", 0);
-        }
-        else if (!CheckFormTool.checkIsbn(bookFormView.bookIsbnField.getText())) {
-            Message.showMessage("请输入正确的ISBN号码", "错误", 0);
-        }
-        else {
-            return true;
-        }
-
-        return false;
-    }
-
     /**
      * 检查用户表单
      */
@@ -70,9 +27,6 @@ public class CheckFormTool {
         }
         else if ("".equals(userFormView.genderComboBox.getSelectedItem()) || "请选择性别".equals(userFormView.genderComboBox.getSelectedItem())) {
             Message.showMessage("请选择性别", "错误", 0);
-        }
-        else if ("".equals(userFormView.idCardField.getText())) {
-            Message.showMessage("请输入借阅卡号", "错误", 0);
         }
         else if ("".equals(userFormView.phoneField.getText())) {
             Message.showMessage("请输入手机号", "错误", 0);

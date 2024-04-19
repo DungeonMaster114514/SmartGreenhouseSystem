@@ -12,10 +12,8 @@ public class User {
     private String username;
     private String password;
     private String gender;
-    private String idCard;
     private String phone;
     private String identity;
-    private Integer bookCount;
     private Integer state;
 
     public Integer getId() {
@@ -66,14 +64,6 @@ public class User {
         this.gender = gender;
     }
 
-    public String getIdCard() {
-        return idCard;
-    }
-
-    public void setIdCard(String idCard) {
-        this.idCard = idCard;
-    }
-
     public String getPhone() {
         return phone;
     }
@@ -88,14 +78,6 @@ public class User {
 
     public void setIdentity(String identity) {
         this.identity = identity;
-    }
-
-    public Integer getBookCount() {
-        return bookCount;
-    }
-
-    public void setBookCount(Integer bookCount) {
-        this.bookCount = bookCount;
     }
 
     public Integer getState() {

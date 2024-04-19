@@ -323,6 +323,7 @@ public class HomeView extends JPanel {
         bookIconLabel.setIcon(imageIcon); //下一张图
         imageTimeLabel.setText(msg.getAdd_time()); //图的时间
         bookIconLabel.setBounds((456-30-imageIcon.getIconWidth())/2, 0, 456-30, 425);
+        repaint();
     }
 
     //上一张图片
@@ -336,12 +337,14 @@ public class HomeView extends JPanel {
         bookIconLabel.setIcon(imageIcon); //上一张图
         imageTimeLabel.setText(msg.getAdd_time()); //图的时间
         bookIconLabel.setBounds((456-30-imageIcon.getIconWidth())/2, 0, 456-30, 425);
+        bookPanel.repaint();
     }
 
     public void detectionImage(){
         ImageIcon icon = Images.arrowIconGreen;
         detectionButton.setIcon(icon);
         detectionButton.setBounds(0, 170, icon.getIconWidth(), icon.getIconHeight());
+        bookPanel.repaint();
     }
 
     //使检测按钮恢复原状

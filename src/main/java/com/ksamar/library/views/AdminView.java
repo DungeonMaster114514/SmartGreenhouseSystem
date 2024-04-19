@@ -21,13 +21,11 @@ public class AdminView extends JFrame {
     /**
      * 文字
      */
-    private String titleText = "图书管理系统";
-    private String subTitleText = "病虫害检测";
+    private String titleText = "智慧大棚系统";
+    private String subTitleText = "主页";
     private String homeText = "病虫害检测";
-    private String bookText = "图书管理";
     private String borrowText = "数据监测";
-    private String returnText = "归还图书";
-    private String overtimeText = "病虫害检测页面";
+    private String overtimeText = "主页";
     private String userText = "用户管理";
     private String systemText = "系统管理";
 
@@ -125,24 +123,24 @@ public class AdminView extends JFrame {
         titleLabel.setForeground(Color.WHITE);
         titleLabel.setHorizontalAlignment(SwingConstants.CENTER);
 
-        // 病虫害检测按钮
-        homeButton.setLayout(null);
-        homeButton.setBounds(0, 80, 240, 48);
-        homeButton.setForeground(Colour.C3C8CE7);
-        homeButton.setFont(Fonts.menuButton);
-        homeButton.setBackground(Color.WHITE);
-        homeButton.setFocusPainted(false);
-        homeButton.setBorder(null);
-        homeButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-        homeButton.addFocusListener(addFocus(homeButton));
-        homeIconLabel.setIcon(Images.homeFocusIcon);
-        homeIconLabel.setBounds(16,0, 48, 48);
-        homeTextLabel.setText(homeText);
-        homeTextLabel.setFont(Fonts.menuButton);
-        homeTextLabel.setForeground(Colour.C3C8CE7);
-        homeTextLabel.setBounds(72, 0, 160, 48);
-        homeButton.add(homeIconLabel);
-        homeButton.add(homeTextLabel);
+        // 主页按钮
+        overtimeButton.setLayout(null);
+        overtimeButton.setBounds(0, 80, 240, 48);
+        overtimeButton.setForeground(Color.white);
+        overtimeButton.setFont(Fonts.menuButton);
+        overtimeButton.setBackground(Color.WHITE);
+        overtimeButton.setFocusPainted(false);
+        overtimeButton.setBorder(null);
+        overtimeButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+        overtimeButton.addFocusListener(addFocus(overtimeButton));
+        overtimeIconLabel.setIcon(Images.overtimeFocusIcon);
+        overtimeIconLabel.setBounds(16,0, 48, 48);
+        overtimeTextLabel.setText(overtimeText);
+        overtimeTextLabel.setFont(Fonts.menuButton);
+        overtimeTextLabel.setForeground(Colour.C3C8CE7);
+        overtimeTextLabel.setBounds(72, 0, 160, 48);
+        overtimeButton.add(overtimeIconLabel);
+        overtimeButton.add(overtimeTextLabel);
 
         //y差56
 
@@ -165,24 +163,24 @@ public class AdminView extends JFrame {
         borrowButton.add(borrowIconLabel);
         borrowButton.add(borrowTextLabel);
 
-        // 病虫害检测页面按钮
-        overtimeButton.setLayout(null);
-        overtimeButton.setBounds(0, 304 - 56 * 2, 240, 48);
-        overtimeButton.setForeground(Color.WHITE);
-        overtimeButton.setFont(Fonts.menuButton);
-        overtimeButton.setBackground(Colour.C3C8CE7);
-        overtimeButton.setFocusPainted(false);
-        overtimeButton.setBorder(null);
-        overtimeButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-        overtimeButton.addFocusListener(addFocus(overtimeButton));
-        overtimeIconLabel.setIcon(Images.overtimeIcon);
-        overtimeIconLabel.setBounds(16,0, 48, 48);
-        overtimeTextLabel.setText(overtimeText);
-        overtimeTextLabel.setFont(Fonts.menuButton);
-        overtimeTextLabel.setForeground(Color.WHITE);
-        overtimeTextLabel.setBounds(72, 0, 160, 48);
-        overtimeButton.add(overtimeIconLabel);
-        overtimeButton.add(overtimeTextLabel);
+        // 病虫害检测按钮
+        homeButton.setLayout(null);
+        homeButton.setBounds(0, 304 - 56 * 2, 240, 48);
+        homeButton.setForeground(Colour.C3C8CE7);
+        homeButton.setFont(Fonts.menuButton);
+        homeButton.setBackground(Colour.C3C8CE7);
+        homeButton.setFocusPainted(false);
+        homeButton.setBorder(null);
+        homeButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+        homeButton.addFocusListener(addFocus(homeButton));
+        homeIconLabel.setIcon(Images.homeIcon);
+        homeIconLabel.setBounds(16,0, 48, 48);
+        homeTextLabel.setText(homeText);
+        homeTextLabel.setFont(Fonts.menuButton);
+        homeTextLabel.setForeground(Color.WHITE);
+        homeTextLabel.setBounds(72, 0, 160, 48);
+        homeButton.add(homeIconLabel);
+        homeButton.add(homeTextLabel);
 
         // 用户管理按钮
         userButton.setLayout(null);
@@ -237,9 +235,9 @@ public class AdminView extends JFrame {
         viewPanel.setBounds(240, 32, 960, 768);
         viewPanel.setBackground(Color.PINK);
         viewPanel.setLayout(new CardLayout());
-        viewPanel.add(homeView, homeText);
-        viewPanel.add(borrowView, borrowText);
         viewPanel.add(overtimeView, overtimeText);
+        viewPanel.add(borrowView, borrowText);
+        viewPanel.add(homeView, homeText);
         viewPanel.add(userView, userText);
         viewPanel.add(systemView, systemText);
 
@@ -252,7 +250,7 @@ public class AdminView extends JFrame {
         add(viewPanel);
 
         // 窗体设置
-        setTitle("图书管理系统-管理员");
+        setTitle("智慧大棚系统-管理员");
         setSize(1200, 800);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setResizable(false);
@@ -272,6 +270,9 @@ public class AdminView extends JFrame {
         }
     }
 
+    public void getSubTitleText(JButton button){
+        subTitleText = ((JLabel) button.getComponent(1)).getText();
+    }
 
     /**
      * 菜单按钮事件
@@ -290,15 +291,15 @@ public class AdminView extends JFrame {
 
                 // 切换按钮样式
                 switch (labelText) {
-                    case "病虫害检测":
-                        icon.setIcon(Images.homeFocusIcon);
-                        homeView.init();
+                    case "主页":
+                        icon.setIcon(Images.overtimeFocusIcon);
                         break;
                     case "数据监测":
                         icon.setIcon(Images.borrowFocusIcon);
                         break;
-                    case "病虫害检测页面":
-                        icon.setIcon(Images.overtimeFocusIcon);
+                    case "病虫害检测":
+                        icon.setIcon(Images.homeFocusIcon);
+                        homeView.init();
                         break;
                     case "用户管理":
                         icon.setIcon(Images.userFocusIcon);
@@ -312,13 +313,12 @@ public class AdminView extends JFrame {
 
                 // 设置副标题
                 subTitleLabel.setText(labelText);
-
                 // 判断第一次点击的是否是病虫害检测按钮
-                if (!labelText.equals(homeText)) {
-                    homeView.setVisible(false);
-                    homeIconLabel.setIcon(Images.homeIcon);
-                    homeButton.setBackground(Colour.C3C8CE7);
-                    homeTextLabel.setForeground(Color.WHITE);
+                if (!labelText.equals(overtimeText)) {
+                    overtimeView.setVisible(false);
+                    overtimeIconLabel.setIcon(Images.overtimeIcon);
+                    overtimeButton.setBackground(Colour.C3C8CE7);
+                    overtimeTextLabel.setForeground(Color.WHITE);
                 }
 
                 // 切换面板
@@ -327,22 +327,22 @@ public class AdminView extends JFrame {
 
             @Override
             public void focusLost(FocusEvent e) {
-                button.setBackground(Colour.C3C8CE7);
                 JLabel icon = (JLabel) button.getComponent(0);
                 JLabel label = (JLabel) button.getComponent(1);
                 String labelText = label.getText();
+                button.setBackground(Colour.C3C8CE7);
                 label.setForeground(Color.WHITE);
 
                 // 切换按钮样式
                 switch (labelText) {
-                    case "病虫害检测":
-                        icon.setIcon(Images.homeIcon);
+                    case "主页":
+                        icon.setIcon(Images.overtimeIcon);
                         break;
                     case "数据监测":
                         icon.setIcon(Images.borrowIcon);
                         break;
-                    case "病虫害检测页面":
-                        icon.setIcon(Images.overtimeIcon);
+                    case "病虫害检测":
+                        icon.setIcon(Images.homeIcon);
                         break;
                     case "用户管理":
                         icon.setIcon(Images.userIcon);
