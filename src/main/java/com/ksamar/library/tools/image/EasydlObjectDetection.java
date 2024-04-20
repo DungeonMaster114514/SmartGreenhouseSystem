@@ -151,12 +151,10 @@ public class EasydlObjectDetection {
             JSONObject detectionResults = new JSONObject(result);
             BufferedImage annotatedImage = drawDetectionResults(ImageIO.read(new File(imagePath)), detectionResults);
             // 保存带有边界框的图像
-            ImageIO.write(annotatedImage, "jpg", new File("D:\\BaiduNetdiskDownload\\data\\valid\\detection\\train4_0300_detected.jpg"));
+            ImageIO.write(annotatedImage, "jpg", new File("D:\\BaiduNetdiskDownload\\data\\valid\\detection\\train4_0300_detected" + id +".jpg"));
         } catch (IOException e) {
             e.printStackTrace();
         }
-        //在数据库设置状态为检测后
-        ImageController.imageAlterMsg(id);
     }
 
     public static void main(String[] args) throws JSONException {

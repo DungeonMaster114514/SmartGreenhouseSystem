@@ -9,6 +9,7 @@ import com.ksamar.library.tools.font.Fonts;
 import com.ksamar.library.tools.image.EasydlObjectDetection;
 import com.ksamar.library.tools.image.Images;
 import com.ksamar.library.tools.table.LibraryTableModel;
+import org.eclipse.swt.internal.ImageList;
 
 import javax.swing.*;
 import java.awt.*;
@@ -316,10 +317,13 @@ public class HomeView extends JPanel {
     //下一张图片
     public void nextImage(){
         recoverImage();
+        imageList = ImageController.imageGetMsg();
+        if (currentIndex >= imageList.size()){
+            return;
+        }
         if (currentIndex < imageList.size() - 1){
             currentIndex ++;
         }
-        imageList = ImageController.imageGetMsg();
         ImageMsg msg = imageList.get(currentIndex);
         ImageIcon imageIcon = Images.getImage(msg.getUrl());
         bookIconLabel.setIcon(imageIcon); //下一张图
@@ -331,10 +335,11 @@ public class HomeView extends JPanel {
     //上一张图片
     public void previousImage(){
         recoverImage();
+        imageList = ImageController.imageGetMsg();
         if (currentIndex > 0){
             currentIndex --;
         }
-        imageList = ImageController.imageGetMsg();
+
         ImageMsg msg = imageList.get(currentIndex);
         ImageIcon imageIcon = Images.getImage(msg.getUrl());
         bookIconLabel.setIcon(imageIcon); //上一张图
@@ -354,10 +359,13 @@ public class HomeView extends JPanel {
 
         //显示检测后的图片
         displayDetectionResult();
+
+        //在数据库设置状态为检测后
+        ImageController.imageAlterMsg(imageList.get(currentIndex).getId());
     }
 
     public void displayDetectionResult(){
-        String url = "D:\\BaiduNetdiskDownload\\data\\valid\\detection\\train4_0300_detected.jpg";
+        String url = "D:\\BaiduNetdiskDownload\\data\\valid\\detection\\train4_0300_detected" + imageList.get(currentIndex).getId() +".jpg";
         ImageIcon icon = Images.getImage(url);
         borrowIconLabel.setIcon(icon);
         borrowIconLabel.setBounds((456-20-icon.getIconWidth())/2, 0 , 456-30, 425);
