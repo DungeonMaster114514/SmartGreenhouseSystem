@@ -31,6 +31,7 @@ public class ImageController {
             preparedStatement.close();
             connection.close();
         } catch (SQLException e) {
+            System.out.println("List<ImageMsg>获取失败");
             e.printStackTrace();
         } finally {
             if (preparedStatement != null) {
@@ -49,5 +50,23 @@ public class ImageController {
             }
         }
         return imageMsg;
+    }
+
+    public static void imageAlterMsg(int id){
+        String sql = "UPDATE image SET state = 0 Where id =" + id;
+        PreparedStatement preparedStatement = null;
+        int num;
+        try {
+            // 执行语句
+            Connection connection = SqlConnect.getConnection();
+            preparedStatement = connection.prepareStatement(sql);
+            num = preparedStatement.executeUpdate();
+
+            preparedStatement.close();
+            connection.close();
+            System.out.println("image成功更改" + num + "行");
+        } catch (SQLException e) {
+            System.out.println("image更改失败");
+        }
     }
 }

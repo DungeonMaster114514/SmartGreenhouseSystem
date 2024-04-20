@@ -9,8 +9,12 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.util.List;
 import javax.imageio.ImageIO;
+import javax.swing.*;
 
+import com.ksamar.library.controller.ImageController;
+import com.ksamar.library.entity.ImageMsg;
 import org.json.JSONException;
 import org.json.JSONObject;
 /**
@@ -41,7 +45,6 @@ public class EasydlObjectDetection {
             String accessToken = "24.3bbbc01680c13bc7cffed8b87e3560ff.2592000.1715428145.282335-60899602";
 
             String result = HttpUtil.post(url, accessToken, "application/json", param);
-            System.out.println(result);
             return result;
         } catch (Exception e) {
             e.printStackTrace();
@@ -64,7 +67,8 @@ public class EasydlObjectDetection {
             JSONObject box = detectionResults.getJSONArray("results").getJSONObject(i).getJSONObject("location");
             JSONObject  resultObject = detectionResults.getJSONArray("results").getJSONObject(i);
             String objectName = resultObject.getString("name");
-            String objectScore = resultObject.getString("score").substring(0,4);
+            double objectScore = resultObject.getDouble("score");
+            String objectScoreStr = String.format("%.4f", objectScore); // 格式化为字符串，保留四位小数
              //根据objectName的值进行替换
             int x = box.getInt("left");
             int y = box.getInt("top");
@@ -132,14 +136,33 @@ public class EasydlObjectDetection {
         }
             graphics.setColor(Color.WHITE); // 文本颜色
             graphics.drawString(objectName, textX, textY);
-            graphics.drawString(objectScore, textX + 100, textY); // 假设分数文本紧接着名称文本
+            graphics.drawString(objectScoreStr, textX + 100, textY); // 假设分数文本紧接着名称文本
         }
             graphics.dispose(); // 释放资源
         return originalImage;
     }
-//    
+
+    public static void getResultImg(String url,int id){
+        String imagePath = url; // 图片的路径
+        try {
+            String base64Image = ImageToBase64Converter.encodeImageToBase64(imagePath);
+            String result = EasydlObjectDetection.easydlObjectDetection(base64Image);
+            // 解析API返回的JSON结果
+            JSONObject detectionResults = new JSONObject(result);
+            BufferedImage annotatedImage = drawDetectionResults(ImageIO.read(new File(imagePath)), detectionResults);
+            // 保存带有边界框的图像
+            ImageIO.write(annotatedImage, "jpg", new File("D:\\BaiduNetdiskDownload\\data\\valid\\detection\\train4_0300_detected.jpg"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        //在数据库设置状态为检测后
+        ImageController.imageAlterMsg(id);
+    }
+
     public static void main(String[] args) throws JSONException {
-    	 String imagePath = "D:\\BaiduNetdiskDownload\\data\\train\\Images\\train4_0300.jpg"; // 图片的路径
+        List<ImageMsg> imageList = ImageController.imageGetMsg();
+        ImageMsg msg = imageList.get(5);
+    	 String imagePath = msg.getUrl(); // 图片的路径
     	 try {
     	        String base64Image = ImageToBase64Converter.encodeImageToBase64(imagePath);
     	        String result = EasydlObjectDetection.easydlObjectDetection(base64Image);
@@ -150,6 +173,6 @@ public class EasydlObjectDetection {
                 ImageIO.write(annotatedImage, "jpg", new File("D:\\BaiduNetdiskDownload\\data\\valid\\detection\\train4_0300_detected.jpg"));   
     	 } catch (IOException e) {
     	        e.printStackTrace();
-    	    }
+         }
     }
 }

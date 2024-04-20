@@ -6,12 +6,14 @@ import com.ksamar.library.entity.ImageMsg;
 import com.ksamar.library.entity.Log;
 import com.ksamar.library.tools.color.Colour;
 import com.ksamar.library.tools.font.Fonts;
+import com.ksamar.library.tools.image.EasydlObjectDetection;
 import com.ksamar.library.tools.image.Images;
 import com.ksamar.library.tools.table.LibraryTableModel;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.font.TextAttribute;
+import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
@@ -41,7 +43,6 @@ public class HomeView extends JPanel {
     /**
      * 文字
      */
-    private String borrowText = "借出书本数量";
     private String logText = "操作日志";
 
     /**
@@ -146,8 +147,7 @@ public class HomeView extends JPanel {
         ImageMsg msg = imageList.get(currentIndex);
         ImageIcon imageIcon = Images.getImage(msg.getUrl());
         bookIconLabel.setIcon(imageIcon);
-        bookIconLabel.setBounds((456-30-imageIcon.getIconWidth())/2, (425-imageIcon.getIconHeight())/2 , 456-30, 425);
-
+        bookIconLabel.setBounds((456-30-imageIcon.getIconWidth())/2, 0, 456-30, 425);
 //        // 图书数量文本标签
 //        bookTextLabel.setText(bookText);
 //        bookTextLabel.setBounds(144, 56, 274, 40);
@@ -201,8 +201,9 @@ public class HomeView extends JPanel {
         detectionPanel.add(detectionButton);
 
         // 借阅图书数量图标
+
         borrowIconLabel.setIcon(Images.borrowPaneIcon);
-        borrowIconLabel.setBounds(16, 36, 128, 128);
+        borrowIconLabel.setBounds((456-20-imageIcon.getIconWidth())/2, 0 , 456-30, 425);
 
 //        // 借阅图书数量文本标签
 //        borrowTextLabel.setText(borrowText);
@@ -318,12 +319,13 @@ public class HomeView extends JPanel {
         if (currentIndex < imageList.size() - 1){
             currentIndex ++;
         }
+        imageList = ImageController.imageGetMsg();
         ImageMsg msg = imageList.get(currentIndex);
         ImageIcon imageIcon = Images.getImage(msg.getUrl());
         bookIconLabel.setIcon(imageIcon); //下一张图
         imageTimeLabel.setText(msg.getAdd_time()); //图的时间
         bookIconLabel.setBounds((456-30-imageIcon.getIconWidth())/2, 0, 456-30, 425);
-        repaint();
+        bookPanel.repaint();
     }
 
     //上一张图片
@@ -332,6 +334,7 @@ public class HomeView extends JPanel {
         if (currentIndex > 0){
             currentIndex --;
         }
+        imageList = ImageController.imageGetMsg();
         ImageMsg msg = imageList.get(currentIndex);
         ImageIcon imageIcon = Images.getImage(msg.getUrl());
         bookIconLabel.setIcon(imageIcon); //上一张图
@@ -344,7 +347,20 @@ public class HomeView extends JPanel {
         ImageIcon icon = Images.arrowIconGreen;
         detectionButton.setIcon(icon);
         detectionButton.setBounds(0, 170, icon.getIconWidth(), icon.getIconHeight());
-        bookPanel.repaint();
+
+        //生成检测后图片
+        String url = imageList.get(currentIndex).getUrl();
+        EasydlObjectDetection.getResultImg(url,imageList.get(currentIndex).getId());
+
+        //显示检测后的图片
+        displayDetectionResult();
+    }
+
+    public void displayDetectionResult(){
+        String url = "D:\\BaiduNetdiskDownload\\data\\valid\\detection\\train4_0300_detected.jpg";
+        ImageIcon icon = Images.getImage(url);
+        borrowIconLabel.setIcon(icon);
+        borrowIconLabel.setBounds((456-20-icon.getIconWidth())/2, 0 , 456-30, 425);
     }
 
     //使检测按钮恢复原状
