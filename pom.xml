@@ -27,43 +27,5 @@
             <artifactId>okhttp</artifactId>
             <version>3.14.5</version>
         </dependency>
-
-        <!-- https://mvnrepository.com/artifact/org.openjfx/javafx-swing -->
-        <dependency>
-            <groupId>org.openjfx</groupId>
-            <artifactId>javafx-swing</artifactId>
-            <version>12</version>
-        </dependency>
-        <!-- https://mvnrepository.com/artifact/org.openjfx/javafx-controls -->
-        <dependency>
-            <groupId>org.openjfx</groupId>
-            <artifactId>javafx-controls</artifactId>
-            <version>12</version>
-        </dependency>
-        <!-- https://mvnrepository.com/artifact/org.openjfx/javafx-graphics -->
-        <dependency>
-            <groupId>org.openjfx</groupId>
-            <artifactId>javafx-graphics</artifactId>
-            <version>12</version>
-        </dependency>
-        <!-- https://mvnrepository.com/artifact/org.openjfx/javafx-base -->
-        <dependency>
-            <groupId>org.openjfx</groupId>
-            <artifactId>javafx-base</artifactId>
-            <version>12</version>
-        </dependency>
-        <!-- https://mvnrepository.com/artifact/org.openjfx/javafx-fxml -->
-        <dependency>
-            <groupId>org.openjfx</groupId>
-            <artifactId>javafx-fxml</artifactId>
-            <version>12</version>
-        </dependency>
-        <!-- https://mvnrepository.com/artifact/org.openjfx/javafx-media -->
-        <dependency>
-            <groupId>org.openjfx</groupId>
-            <artifactId>javafx-media</artifactId>
-            <version>12</version>
-        </dependency>
-
     </dependencies>
 </project>
