@@ -18,11 +18,13 @@ public class LineChart extends JPanel {
     private static final int PADDING = 24; // 定义边界间距
     private double maxY;
     private int yAxisInterval;
+    private int datePositionY = 200;
 
     public LineChart() {
         //设置Y轴最大值
         maxY = 150;
         yAxisInterval = 25; //y轴线的间隔
+        datePositionY = 200; //日期y轴位置
         // 添加一些示例数据点
         addDataPoints();
     }
@@ -179,13 +181,13 @@ public class LineChart extends JPanel {
 
                         // 设置旋转点
                         int centerX = x - labelWidth / 2 + 10;
-                        int centerY = 200;
+                        int centerY = datePositionY;
 
                         // 创建一个新的 AffineTransform 用于旋转
                         AffineTransform rotateTransform = AffineTransform.getRotateInstance(Math.toRadians(-20), centerX, centerY);
                         g2.transform(rotateTransform); // 应用旋转变换
 
-                        g2.drawString(s, x - labelWidth / 2 + 3, 200 + 3); //+3是为了让时间显示偏右下
+                        g2.drawString(s, x - labelWidth / 2 + 3, datePositionY + 3); //+3是为了让时间显示偏右下
                     }
                 }
             }
@@ -245,45 +247,7 @@ public class LineChart extends JPanel {
         this.yAxisInterval = yAxisInterval;
     }
 
-    public static void main(String[] args) {
-        SwingUtilities.invokeLater(() -> {
-            JFrame frame = new JFrame("Line Chart Example");
-            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-            frame.setSize(960, 768);
-
-            JPanel jp = new JPanel();
-            jp.setSize(960, 768);
-            jp.setLayout(null);
-
-            // 创建 LineChart 的实例
-            LineChart lineChart = new LineChart();
-
-            lineChart.setBackground(Colour.FAFAFA);
-            lineChart.setMaxY(200);
-            lineChart.setyAxisInterval(200/6);
-            lineChart.setBounds(16,16,960/2 - 16 * 2,210);
-            lineChart.setDescribeText("湿度折线图");
-            lineChart.setLineColor(Colour.C3C8CE7);
-
-            List<Dashdoard> list = new ArrayList<>();
-            Dashdoard dashdoard = new Dashdoard(1,"15","20","30","54","2024-10-10");
-            Dashdoard dashdoard2 = new Dashdoard(1,"20","20","30","54","2024-10-11");
-            Dashdoard dashdoard3 = new Dashdoard(1,"40","20","30","54","2024-10-12");
-            Dashdoard dashdoard4 = new Dashdoard(1,"35","20","30","54","2024-10-13");
-            Dashdoard dashdoard5 = new Dashdoard(1,"31","20","30","54","2024-10-14");
-            list.add(dashdoard);
-            list.add(dashdoard2);
-            list.add(dashdoard3);
-            list.add(dashdoard4);
-            list.add(dashdoard5);
-
-            lineChart.addDataPointsHum(list);
-            // 将 LineChart 添加到 JFrame 中
-            jp.add(lineChart);
-            frame.add(jp);
-
-            // 显示应用程序窗口
-            frame.setVisible(true);
-        });
+    public void setDatePositionY(int datePositionY) {
+        this.datePositionY = datePositionY;
     }
 }
