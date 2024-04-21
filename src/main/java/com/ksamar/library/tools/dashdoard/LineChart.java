@@ -8,6 +8,9 @@ import java.awt.*;
 import java.awt.geom.AffineTransform;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
+
+import static java.lang.Thread.sleep;
 
 public class LineChart extends JPanel {
     private List<Double> dataPointsX;

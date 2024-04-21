@@ -35,6 +35,7 @@ public class OvertimeView extends JPanel {
     private JLabel airTextLabel = new JLabel();
     private JLabel weatherIcon = new JLabel();
     private JLabel weatherBgIcon = new JLabel();
+    private JLabel videoImageIcon = new JLabel();
 
     private JLabel todayTextLabel = new JLabel();
     private JLabel tomorrowTextLabel = new JLabel();
@@ -115,8 +116,13 @@ public class OvertimeView extends JPanel {
         pageComboBox.setFont(Fonts.comboBox);
         pageComboBox.addActionListener(pageChange());
 
+        //模拟视频播放图片
+        ImageIcon imageIcon = Images.greenhouseIcon;
+        videoImageIcon.setIcon(imageIcon);
+        videoImageIcon.setBounds(460,110, 90, 90);
+
         //天气图标
-        ImageIcon imageIcon = Images.weatherIcon;
+        imageIcon = Images.weatherIcon;
         weatherIcon.setIcon(imageIcon);
         weatherIcon.setBounds(16,110, 90, 90);
 
@@ -213,6 +219,7 @@ public class OvertimeView extends JPanel {
         // 添加组件
         add(weatherPane);
         add(pageComboBox);
+        add(videoImageIcon);
 
         swingWorker = new SwingWorker<>() {
             @Override
