@@ -18,7 +18,7 @@ public class LineChart extends JPanel {
     private static final int PADDING = 24; // 定义边界间距
     private double maxY;
     private int yAxisInterval;
-    private int datePositionY = 200;
+    private int datePositionY;
 
     public LineChart() {
         //设置Y轴最大值
