@@ -9,6 +9,7 @@ import com.ksamar.library.tools.weather.WeatherService;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionListener;
 import java.util.List;
 
 /**
@@ -45,11 +46,15 @@ public class OvertimeView extends JPanel {
     private JLabel tomorrowWeatherImageLabel = new JLabel();
     private JLabel afterWeatherImageLabel = new JLabel();
 
-
     /**
      * 面板
      */
     private JScrollPane weatherPane = new JScrollPane();
+
+    /**
+     * 下拉菜单
+     */
+    private JComboBox<String> pageComboBox = new JComboBox<>();
 
     /**
      * 自动刷新线程
@@ -100,6 +105,15 @@ public class OvertimeView extends JPanel {
         else {
             airTextLabel.setForeground(Color.RED);
         }
+
+        // 大棚选项项栏
+        pageComboBox.setBounds(960 - 150 * 2 -16, 4, 150, 32);
+        pageComboBox.addItem("一号大棚监控");
+        pageComboBox.addItem("二号大棚监控");
+        pageComboBox.addItem("三号大棚监控");
+        pageComboBox.setBackground(Color.WHITE);
+        pageComboBox.setFont(Fonts.comboBox);
+        pageComboBox.addActionListener(pageChange());
 
         //天气图标
         ImageIcon imageIcon = Images.weatherIcon;
@@ -198,6 +212,7 @@ public class OvertimeView extends JPanel {
 
         // 添加组件
         add(weatherPane);
+        add(pageComboBox);
 
         swingWorker = new SwingWorker<>() {
             @Override
@@ -224,5 +239,29 @@ public class OvertimeView extends JPanel {
         weatherMsg = WeatherService.getCurrentWeather();
         list = WeatherService.getWeatherList();
         repaint();
+    }
+
+    /**
+     * 下拉菜单事件
+     * @return ActionListener
+     */
+    private ActionListener pageChange() {
+        return e -> {
+            // 获取组合框下标
+//            int index = pageComboBox.getSelectedIndex();
+//            switch (index) {
+//                case 0:
+//                    size = 10;
+//                    break;
+//                case 1:
+//                    size = 50;
+//                    break;
+//                case 2:
+//                    size = 100;
+//                    break;
+//                default:
+//                    break;
+//            }
+        };
     }
 }

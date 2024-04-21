@@ -9,12 +9,9 @@ import com.ksamar.library.tools.font.Fonts;
 import com.ksamar.library.tools.image.EasydlObjectDetection;
 import com.ksamar.library.tools.image.Images;
 import com.ksamar.library.tools.table.LibraryTableModel;
-import org.eclipse.swt.internal.ImageList;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.font.TextAttribute;
-import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
@@ -329,6 +326,10 @@ public class HomeView extends JPanel {
         bookIconLabel.setIcon(imageIcon); //下一张图
         imageTimeLabel.setText(msg.getAdd_time()); //图的时间
         bookIconLabel.setBounds((456-30-imageIcon.getIconWidth())/2, 0, 456-30, 425);
+
+        //使检测结果消失
+        borrowIconLabel.setIcon(Images.borrowPaneIcon);
+        borrowIconLabel.setBounds((456-20-imageIcon.getIconWidth())/2, 0 , 456-30, 425);
         bookPanel.repaint();
     }
 
@@ -345,6 +346,10 @@ public class HomeView extends JPanel {
         bookIconLabel.setIcon(imageIcon); //上一张图
         imageTimeLabel.setText(msg.getAdd_time()); //图的时间
         bookIconLabel.setBounds((456-30-imageIcon.getIconWidth())/2, 0, 456-30, 425);
+
+        //使检测结果消失
+        borrowIconLabel.setIcon(Images.borrowPaneIcon);
+        borrowIconLabel.setBounds((456-20-imageIcon.getIconWidth())/2, 0 , 456-30, 425);
         bookPanel.repaint();
     }
 
