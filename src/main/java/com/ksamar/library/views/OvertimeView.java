@@ -291,7 +291,7 @@ public class OvertimeView extends JPanel {
             protected Void doInBackground() throws Exception {
                 while (!isCancelled()) {
                     // 每隔60秒执行指定方法
-                    Thread.sleep(1000);
+                    Thread.sleep(10000);
                     // 调用指定方法
                     toDoSomeThing();
                 }
