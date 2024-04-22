@@ -192,7 +192,7 @@ public class OvertimeView extends JPanel {
 
         list = WeatherService.getWeatherList();
 
-//小组件1今天标签
+        //小组件1今天标签
         String todayString = "今天";
         todayTextLabel.setText(todayString);
         todayTextLabel.setFont(Fonts.weatherSmall);

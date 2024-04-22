@@ -75,7 +75,7 @@ public class BorrowView extends JPanel {
         tickLeft2.setFrom(0);
         tickLeft2.setTo(100);
         tickLeft2.setMajor(10);
-        tickLeft2.setMinor(2.0);
+        tickLeft2.setMinor(1.0);
 
         // 右一仪表盘(光照强度)
         tickRight1 = new Tick();
@@ -83,9 +83,9 @@ public class BorrowView extends JPanel {
         tickRight1.setType(Tick.RING_240);
         tickRight1.setDescribe("实时光照强度(Lux)");
         tickRight1.setFrom(0);
-        tickRight1.setTo(2500);
-        tickRight1.setMajor(500);
-        tickRight1.setMinor(25);
+        tickRight1.setTo(3000);
+        tickRight1.setMajor(600);
+        tickRight1.setMinor(30);
 
         // 右二仪表盘(土壤湿度)
         tickRight2 = new Tick();
@@ -116,8 +116,8 @@ public class BorrowView extends JPanel {
         //光照强度
         lineChartLight = new LineChart();
         lineChartLight.setBackground(Colour.FAFAFA);
-        lineChartLight.setMaxY(2500);
-        lineChartLight.setyAxisInterval(2500/6);
+        lineChartLight.setMaxY(3000);
+        lineChartLight.setyAxisInterval(3000/6);
         lineChartLight.setBounds(16 * 2 + (960/2 - 16 * 2),300,960/2 - 16 * 2,210);
         lineChartLight.setDescribeText("光照强度折线图");
         lineChartLight.setLineColor(Colour.CFAA64B);

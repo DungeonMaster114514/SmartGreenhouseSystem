@@ -12,7 +12,7 @@ import java.util.List;
 
 public class ImageController {
     public static List<ImageMsg> imageGetMsg(){
-        String selectUserSql = "SELECT `id`, url , description, add_time FROM image WHERE state = 1";
+        String selectUserSql = "SELECT `id`, url , description, add_time FROM image WHERE state = 1 ORDER BY add_time DESC";
         PreparedStatement preparedStatement = null;
         ResultSet resultSet = null;
 
