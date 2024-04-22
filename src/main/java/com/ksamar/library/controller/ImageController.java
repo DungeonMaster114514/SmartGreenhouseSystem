@@ -52,6 +52,18 @@ public class ImageController {
         return imageMsg;
     }
 
+    public static void imageInsertMsg(String url, String description) {
+        String insertSql = "INSERT INTO image (url, description) VALUES (?,?);";
+        try (Connection connection = SqlConnect.getConnection();
+             PreparedStatement preparedStatement = connection.prepareStatement(insertSql)) {
+
+            preparedStatement.setString(1, url);
+            preparedStatement.setString(2, description);
+            preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException("Error inserting data into the database", e);
+        }
+    }
     public static void imageAlterMsg(int id){
         String sql = "UPDATE image SET state = 0 Where id =" + id;
         PreparedStatement preparedStatement = null;

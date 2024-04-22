@@ -127,7 +127,7 @@ public class Images {
         weatherIcon = new ImageIcon(weatherImage.getScaledInstance(90, 90 ,Image.SCALE_SMOOTH));
 
         greenhouseImage = new ImageIcon(Objects.requireNonNull(Images.class.getResource(url + "greenhouse.png"))).getImage();
-        greenhouseIcon = new ImageIcon(greenhouseImage.getScaledInstance(90, 90 ,Image.SCALE_SMOOTH));
+        greenhouseIcon = new ImageIcon(greenhouseImage.getScaledInstance(464 - 16, 326 - 16 ,Image.SCALE_SMOOTH));
 
         weatherSmallIcon = new ImageIcon(weatherImage.getScaledInstance(60, 60 ,Image.SCALE_SMOOTH));
     }

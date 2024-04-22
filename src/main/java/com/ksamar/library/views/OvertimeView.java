@@ -3,9 +3,11 @@ package com.ksamar.library.views;
 import com.ksamar.library.tools.color.Colour;
 import com.ksamar.library.tools.font.Fonts;
 import com.ksamar.library.tools.image.Images;
+import com.ksamar.library.tools.sensor.MqttImageReceiver;
 import com.ksamar.library.tools.weather.WeatherMsg;
 import com.ksamar.library.tools.weather.WeatherMsgTiny;
 import com.ksamar.library.tools.weather.WeatherService;
+import org.eclipse.paho.client.mqttv3.MqttException;
 
 import javax.swing.*;
 import java.awt.*;
@@ -22,8 +24,9 @@ public class OvertimeView extends JPanel {
     /**
      * 属性
      */
-    private WeatherMsg weatherMsg;
-    private List<WeatherMsgTiny> list;
+//    private WeatherMsg weatherMsg;
+//    private List<WeatherMsgTiny> list;
+//    private MqttImageReceiver mqttImageReceiver;
 
     /**
      * 标签
@@ -36,7 +39,14 @@ public class OvertimeView extends JPanel {
     private JLabel weatherIcon = new JLabel();
     private JLabel weatherBgIcon = new JLabel();
     private JLabel videoImageIcon = new JLabel();
-
+    private JLabel greenHouseMsg0 = new JLabel();
+    private JLabel greenHouseMsg1 = new JLabel();
+    private JLabel greenHouseMsg2 = new JLabel();
+    private JLabel greenHouseMsg3 = new JLabel();
+    private JLabel greenHouseMsg4 = new JLabel();
+    private JLabel greenHouseMsg5 = new JLabel();
+    private JLabel greenHouseMsg6 = new JLabel();
+    private JLabel greenHouseMsg7 = new JLabel();
     private JLabel todayTextLabel = new JLabel();
     private JLabel tomorrowTextLabel = new JLabel();
     private JLabel afterTextLabel = new JLabel();
@@ -51,11 +61,12 @@ public class OvertimeView extends JPanel {
      * 面板
      */
     private JScrollPane weatherPane = new JScrollPane();
+    private JPanel greenHousePane = new JPanel();
 
     /**
      * 下拉菜单
      */
-    private JComboBox<String> pageComboBox = new JComboBox<>();
+    private JComboBox<String> ComboBox = new JComboBox<>();
 
     /**
      * 自动刷新线程
@@ -63,35 +74,35 @@ public class OvertimeView extends JPanel {
     SwingWorker<Void,Void> swingWorker;
 
     public OvertimeView() {
-        weatherMsg = WeatherService.getCurrentWeather();
+//        weatherMsg = WeatherService.getCurrentWeather();
         //城市标签
-        cityTextLabel.setText(weatherMsg.getStationCity());
+        cityTextLabel.setText("南昌县");
         cityTextLabel.setFont(Fonts.weatherSmall);
         cityTextLabel.setForeground(Color.white);
         cityTextLabel.setBounds(16,8, 150, 50);
 
         //风力标签
-        windTextLabel.setText(weatherMsg.getWindDirect());
+        windTextLabel.setText("北风 3级");
         windTextLabel.setFont(Fonts.weatherSmall);
         windTextLabel.setForeground(Color.white);
         FontMetrics metrics = windTextLabel.getFontMetrics(Fonts.weatherSmall);
-        int stringWidth = metrics.stringWidth(weatherMsg.getWindDirect());  //计算文本宽度
+        int stringWidth = metrics.stringWidth("北风 3级");  //计算文本宽度
         windTextLabel.setBounds(464 - 16 - stringWidth - 16,8, 250, 50);
 
         //当前温度标签
-        currentTemperatureTextLabel.setText((int) weatherMsg.getTemperature() + "°");
+        currentTemperatureTextLabel.setText("24°");
         currentTemperatureTextLabel.setBounds(12 + 90 + 16,110 - 10, 150, 50);
         currentTemperatureTextLabel.setFont(Fonts.weatherTem);
         currentTemperatureTextLabel.setForeground(Color.white);
 
         //当前天气标签
-        currentWeatherTextLabel.setText(weatherMsg.getInfo());
+        currentWeatherTextLabel.setText("晴");
         currentWeatherTextLabel.setBounds(12 + 90 + 16,110 - 10 + 60, 150, 50);
         currentWeatherTextLabel.setFont(Fonts.weather);
         currentWeatherTextLabel.setForeground(Color.white);
 
         //空气质量标签
-        String airText = "┃" + weatherMsg.getAir();
+        String airText = "┃" + "优";
         airTextLabel.setText(airText);
         FontMetrics metricsAir = airTextLabel.getFontMetrics(Fonts.weather);
         int stringWidthAir = metricsAir.stringWidth(airText);  //计算文本宽度
@@ -108,25 +119,78 @@ public class OvertimeView extends JPanel {
         }
 
         // 大棚选项项栏
-        pageComboBox.setBounds(960 - 150 * 2 -16, 4, 150, 32);
-        pageComboBox.addItem("一号大棚监控");
-        pageComboBox.addItem("二号大棚监控");
-        pageComboBox.addItem("三号大棚监控");
-        pageComboBox.setBackground(Color.WHITE);
-        pageComboBox.setFont(Fonts.comboBox);
-        pageComboBox.addActionListener(pageChange());
+        ComboBox.setBounds(960 - 150 * 2 -16, 16, 150, 32);
+        ComboBox.addItem("零号大棚监控");
+        ComboBox.addItem("一号大棚监控");
+        ComboBox.addItem("二号大棚监控");
+        ComboBox.addItem("三号大棚监控");
+        ComboBox.addItem("四号大棚监控");
+        ComboBox.addItem("五号大棚监控");
+        ComboBox.addItem("六号大棚监控");
+        ComboBox.addItem("七号大棚监控");
+        ComboBox.setBackground(Color.WHITE);
+        ComboBox.setFont(Fonts.comboBox);
+//        ComboBox.addActionListener(pageChange());
 
         //模拟视频播放图片
         ImageIcon imageIcon = Images.greenhouseIcon;
         videoImageIcon.setIcon(imageIcon);
-        videoImageIcon.setBounds(460,110, 90, 90);
+        videoImageIcon.setBounds(460 + 32,42 + 16, 464 - 16, 326 - 16);
+
+        //模拟警报
+        greenHouseMsg0.setText("零号草莓种植大棚处于正常状态");
+        greenHouseMsg1.setText("一号草莓种植大棚处于正常状态");
+        greenHouseMsg2.setText("二号草莓种植大棚处于正常状态");
+        greenHouseMsg3.setText("三号草莓种植大棚处于正常状态");
+        greenHouseMsg4.setText("四号草莓种植大棚处于正常状态");
+        greenHouseMsg5.setText("五号草莓种植大棚处于正常状态");
+        greenHouseMsg6.setText("六号草莓种植大棚处于正常状态");
+        greenHouseMsg7.setText("七号草莓种植大棚处于正常状态");
+        greenHouseMsg0.setFont(Fonts.weather2);
+        greenHouseMsg1.setFont(Fonts.weather2);
+        greenHouseMsg2.setFont(Fonts.weather2);
+        greenHouseMsg3.setFont(Fonts.weather2);
+        greenHouseMsg4.setFont(Fonts.weather2);
+        greenHouseMsg5.setFont(Fonts.weather2);
+        greenHouseMsg6.setFont(Fonts.weather2);
+        greenHouseMsg7.setFont(Fonts.weather2);
+        greenHouseMsg0.setForeground(Color.black);
+        greenHouseMsg1.setForeground(Color.black);
+        greenHouseMsg2.setForeground(Color.black);
+        greenHouseMsg3.setForeground(Color.black);
+        greenHouseMsg4.setForeground(Color.black);
+        greenHouseMsg5.setForeground(Color.black);
+        greenHouseMsg6.setForeground(Color.black);
+        greenHouseMsg7.setForeground(Color.black);
+        int stringWidthGreenHouse = todayTextLabel.getFontMetrics(Fonts.weather2).stringWidth("零号草莓种植大棚处于正常状态");  //计算文本宽度
+        greenHouseMsg0.setBounds(16 + (464 - 42 - stringWidthGreenHouse)/2, 16, 340, 22);
+        greenHouseMsg1.setBounds(16 + (464 - 42 - stringWidthGreenHouse)/2, 16 * 2 + 22, 340, 22);
+        greenHouseMsg2.setBounds(16 + (464 - 42 - stringWidthGreenHouse)/2, 16 * 3 + 44, 340, 22);
+        greenHouseMsg3.setBounds(16 + (464 - 42 - stringWidthGreenHouse)/2, 16 * 4 + 66, 340, 22);
+        greenHouseMsg4.setBounds(16 + (464 - 42 - stringWidthGreenHouse)/2, 16 * 5 + 88, 340, 22);
+        greenHouseMsg5.setBounds(16 + (464 - 42 - stringWidthGreenHouse)/2, 16 * 6 + 110, 340, 22);
+        greenHouseMsg6.setBounds(16 + (464 - 42 - stringWidthGreenHouse)/2, 16 * 7 + 132, 340, 22);
+        greenHouseMsg7.setBounds(16 + (464 - 42 - stringWidthGreenHouse)/2, 16 * 8 + 154, 340, 22);
+
+        //大棚警报面板
+        greenHousePane.setLayout(null);
+        greenHousePane.setBounds(460 + 32,42 + 16 + 326, 464 - 16, 326);
+        greenHousePane.setBackground(Colour.F0F0F0Plus);
+        greenHousePane.add(greenHouseMsg0);
+        greenHousePane.add(greenHouseMsg1);
+        greenHousePane.add(greenHouseMsg2);
+        greenHousePane.add(greenHouseMsg3);
+        greenHousePane.add(greenHouseMsg4);
+        greenHousePane.add(greenHouseMsg5);
+        greenHousePane.add(greenHouseMsg6);
+        greenHousePane.add(greenHouseMsg7);
 
         //天气图标
         imageIcon = Images.weatherIcon;
         weatherIcon.setIcon(imageIcon);
         weatherIcon.setBounds(16,110, 90, 90);
 
-        list = WeatherService.getWeatherList();
+//        list = WeatherService.getWeatherList();
 
         //小组件1今天标签
         String todayString = "今天";
@@ -137,7 +201,7 @@ public class OvertimeView extends JPanel {
         todayTextLabel.setBounds(16 + (139 - stringWidthTool1)/2, 350 + 30, 250, 50);
 
         //小组件1今天天气标签
-        todayString = (int)list.get(0).getMin_temp() + "°/" + (int) list.get(0).getMax_temp() + "°";
+        todayString = 17 + "°/" + 26 + "°";
         todayWeatherTextLabel.setText(todayString);
         todayWeatherTextLabel.setFont(Fonts.weather2);
         todayWeatherTextLabel.setForeground(Color.white);
@@ -157,7 +221,7 @@ public class OvertimeView extends JPanel {
         tomorrowTextLabel.setBounds(16 + 139 + (139 - stringWidthTool2)/2, 350 + 30, 250, 50);
 
         //小组件2明天天气标签
-        tomorrowString = (int)list.get(1).getMin_temp() + "°/" + (int) list.get(1).getMax_temp() + "°";
+        tomorrowString = 18 + "°/" + 25 + "°";
         tomorrowWeatherTextLabel.setText(tomorrowString);
         tomorrowWeatherTextLabel.setFont(Fonts.weather2);
         tomorrowWeatherTextLabel.setForeground(Color.white);
@@ -177,7 +241,7 @@ public class OvertimeView extends JPanel {
         afterTextLabel.setBounds(16 + 139 * 2 + (139 - stringWidthTool3)/2, 350 + 30, 250, 50);
 
         //小组件3后天天气标签
-        afterString = (int)list.get(2).getMin_temp() + "°/" + (int) list.get(2).getMax_temp() + "°";
+        afterString = 18 + "°/" + 21 + "°";
         afterWeatherTextLabel.setText(afterString);
         afterWeatherTextLabel.setFont(Fonts.weather2);
         afterWeatherTextLabel.setForeground(Color.white);
@@ -218,7 +282,8 @@ public class OvertimeView extends JPanel {
 
         // 添加组件
         add(weatherPane);
-        add(pageComboBox);
+        add(ComboBox);
+        add(greenHousePane);
         add(videoImageIcon);
 
         swingWorker = new SwingWorker<>() {
@@ -235,6 +300,18 @@ public class OvertimeView extends JPanel {
         };
         swingWorker.execute();
 
+//        //获取各种数据到mysql中
+//        try {
+//            // 创建MqttImageReceiver实例，连接到MQTT代理
+//            mqttImageReceiver = new MqttImageReceiver("tcp://192.168.1.100:1883");
+//            // 保持程序运行，以便接收消息
+//        } catch (MqttException e) {
+//            // 打印初始化MQTT客户端时的错误信息
+//            System.out.println("Error initializing MQTT client: " + e.getMessage());
+//            // 打印异常堆栈信息
+//            e.printStackTrace();
+//        }
+
         // 窗体设置
         setSize(960, 768);
         setLayout(null);
@@ -243,8 +320,8 @@ public class OvertimeView extends JPanel {
     }
 
     private void toDoSomeThing(){
-        weatherMsg = WeatherService.getCurrentWeather();
-        list = WeatherService.getWeatherList();
+//        weatherMsg = WeatherService.getCurrentWeather();
+//        list = WeatherService.getWeatherList();
         repaint();
     }
 
@@ -252,23 +329,46 @@ public class OvertimeView extends JPanel {
      * 下拉菜单事件
      * @return ActionListener
      */
-    private ActionListener pageChange() {
-        return e -> {
-            // 获取组合框下标
-//            int index = pageComboBox.getSelectedIndex();
+//    private ActionListener pageChange() {
+//        return e -> {
+//            // 获取组合框下标
+//            int index = ComboBox.getSelectedIndex();
 //            switch (index) {
 //                case 0:
-//                    size = 10;
+//                    mqttImageReceiver.setCameraNum(0);
+//                    System.out.println(index);
 //                    break;
 //                case 1:
-//                    size = 50;
+//                    mqttImageReceiver.setCameraNum(1);
+//                    System.out.println(index);
 //                    break;
 //                case 2:
-//                    size = 100;
+//                    mqttImageReceiver.setCameraNum(2);
+//                    System.out.println(index);
+//                    break;
+//                case 3:
+//                    mqttImageReceiver.setCameraNum(3);
+//                    System.out.println(index);
+//                    break;
+//                case 4:
+//                    mqttImageReceiver.setCameraNum(4);
+//                    System.out.println(index);
+//                    break;
+//                case 5:
+//                    mqttImageReceiver.setCameraNum(5);
+//                    System.out.println(index);
+//                    break;
+//                case 6:
+//                    mqttImageReceiver.setCameraNum(6);
+//                    System.out.println(index);
+//                    break;
+//                case 7:
+//                    mqttImageReceiver.setCameraNum(7);
+//                    System.out.println(index);
 //                    break;
 //                default:
 //                    break;
 //            }
-        };
-    }
+//        };
+//    }
 }

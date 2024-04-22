@@ -237,12 +237,15 @@ public class UserView extends JPanel {
             switch (index) {
                 case 0:
                     size = 10;
+                    System.out.println(10);
                     break;
                 case 1:
                     size = 50;
+                    System.out.println(50);
                     break;
                 case 2:
                     size = 100;
+                    System.out.println(100);
                     break;
                 default:
                     break;

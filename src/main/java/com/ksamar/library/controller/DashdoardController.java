@@ -53,5 +53,20 @@ public class DashdoardController {
 
         return dashdoardMsg;
     }
+
+    public static void DashdoardInsertMsg(String temperature ,String humidity ,String lightIntensity,String soilTemperature) {
+        String insertSql = "INSERT INTO dashdoard (temperature , humidity , lightIntensity, soilTemperature) VALUES (?,?,?,?);";
+        try (Connection connection = SqlConnect.getConnection();
+             PreparedStatement preparedStatement = connection.prepareStatement(insertSql)) {
+
+            preparedStatement.setString(1, temperature);
+            preparedStatement.setString(2, humidity);
+            preparedStatement.setString(3, lightIntensity);
+            preparedStatement.setString(4, soilTemperature);
+            preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException("Error inserting data into the database", e);
+        }
+    }
 }
 

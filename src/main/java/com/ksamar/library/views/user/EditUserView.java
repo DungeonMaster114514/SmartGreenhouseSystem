@@ -112,11 +112,9 @@ public class EditUserView extends UserFormView {
         usernameField.setText(vector.get(3).toString());
         passwordField.setText(vector.get(4).toString());
         genderComboBox.setSelectedItem(vector.get(5).toString());
-        idCardField.setText(vector.get(6).toString());
-        phoneField.setText(vector.get(7).toString());
-        identityComboBox.setSelectedItem(vector.get(8).toString());
-        bookCountField.setText(vector.get(9).toString());
-        stateComboBox.setSelectedItem(vector.get(10).toString());
+        phoneField.setText(vector.get(6).toString());
+        identityComboBox.setSelectedItem(vector.get(7).toString());
+        stateComboBox.setSelectedItem(vector.get(8).toString());
         setVisible(true);
     }
 
