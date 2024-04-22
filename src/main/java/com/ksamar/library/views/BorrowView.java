@@ -73,8 +73,8 @@ public class BorrowView extends JPanel {
         tickLeft2.setType(Tick.RING_240);
         tickLeft2.setDescribe("实时湿度(%)");
         tickLeft2.setFrom(0);
-        tickLeft2.setTo(200);
-        tickLeft2.setMajor(20);
+        tickLeft2.setTo(100);
+        tickLeft2.setMajor(10);
         tickLeft2.setMinor(2.0);
 
         // 右一仪表盘(光照强度)
@@ -91,9 +91,9 @@ public class BorrowView extends JPanel {
         tickRight2 = new Tick();
         tickRight2.setForeground(Colour.C3C8CE7);
         tickRight2.setType(Tick.RING_240);
-        tickRight2.setDescribe("实时土壤湿度(%)");
-        tickRight2.setTo(4000);
-        tickRight2.setMajor(800);
+        tickRight2.setDescribe("实时土壤湿度");
+        tickRight2.setTo(4100);
+        tickRight2.setMajor(820);
         tickRight2.setMinor(40);
 
         //仪表盘面板
@@ -125,8 +125,8 @@ public class BorrowView extends JPanel {
         //湿度折线图
         lineChartHum = new LineChart();
         lineChartHum.setBackground(Colour.FAFAFA);
-        lineChartHum.setMaxY(200);
-        lineChartHum.setyAxisInterval(200/6);
+        lineChartHum.setMaxY(100);
+        lineChartHum.setyAxisInterval(100/6);
         lineChartHum.setBounds(16,300 + 210 + 24,960/2 - 16 * 2,210);
         lineChartHum.setDescribeText("湿度折线图");
         lineChartHum.setLineColor(Colour.C3C8CE7);
@@ -134,8 +134,8 @@ public class BorrowView extends JPanel {
         //土壤湿度
         lineChartSoilTem = new LineChart();
         lineChartSoilTem.setBackground(Colour.FAFAFA);
-        lineChartSoilTem.setMaxY(4000);
-        lineChartSoilTem.setyAxisInterval(4000/6);
+        lineChartSoilTem.setMaxY(4100);
+        lineChartSoilTem.setyAxisInterval(4100/6);
         lineChartSoilTem.setBounds(16 * 2 + (960/2 - 16 * 2),300 + 210 + 24,960/2 - 16 * 2,210);
         lineChartSoilTem.setDescribeText("土壤湿度折线图");
         lineChartSoilTem.setLineColor(Colour.C5AB556);
@@ -191,7 +191,7 @@ public class BorrowView extends JPanel {
 
         //设置右二仪表盘数据
         tickRight2.setValue(tickRight2Value);
-        tickRight2.setUnit("%");
+        tickRight2.setUnit("");
     }
 
     /**

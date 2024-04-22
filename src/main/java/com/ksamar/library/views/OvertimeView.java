@@ -24,9 +24,9 @@ public class OvertimeView extends JPanel {
     /**
      * 属性
      */
-//    private WeatherMsg weatherMsg;
-//    private List<WeatherMsgTiny> list;
-//    private MqttImageReceiver mqttImageReceiver;
+    private WeatherMsg weatherMsg;
+    private List<WeatherMsgTiny> list;
+    private MqttImageReceiver mqttImageReceiver;
 
     /**
      * 标签
@@ -74,35 +74,35 @@ public class OvertimeView extends JPanel {
     SwingWorker<Void,Void> swingWorker;
 
     public OvertimeView() {
-//        weatherMsg = WeatherService.getCurrentWeather();
+        weatherMsg = WeatherService.getCurrentWeather();
         //城市标签
-        cityTextLabel.setText("南昌县");
+        cityTextLabel.setText(weatherMsg.getStationCity());
         cityTextLabel.setFont(Fonts.weatherSmall);
         cityTextLabel.setForeground(Color.white);
         cityTextLabel.setBounds(16,8, 150, 50);
 
         //风力标签
-        windTextLabel.setText("北风 3级");
+        windTextLabel.setText(weatherMsg.getWindDirect());
         windTextLabel.setFont(Fonts.weatherSmall);
         windTextLabel.setForeground(Color.white);
         FontMetrics metrics = windTextLabel.getFontMetrics(Fonts.weatherSmall);
-        int stringWidth = metrics.stringWidth("北风 3级");  //计算文本宽度
+        int stringWidth = metrics.stringWidth(weatherMsg.getWindDirect());  //计算文本宽度
         windTextLabel.setBounds(464 - 16 - stringWidth - 16,8, 250, 50);
 
         //当前温度标签
-        currentTemperatureTextLabel.setText("24°");
+        currentTemperatureTextLabel.setText((int) weatherMsg.getTemperature() + "°");
         currentTemperatureTextLabel.setBounds(12 + 90 + 16,110 - 10, 150, 50);
         currentTemperatureTextLabel.setFont(Fonts.weatherTem);
         currentTemperatureTextLabel.setForeground(Color.white);
 
         //当前天气标签
-        currentWeatherTextLabel.setText("晴");
+        currentWeatherTextLabel.setText(weatherMsg.getInfo());
         currentWeatherTextLabel.setBounds(12 + 90 + 16,110 - 10 + 60, 150, 50);
         currentWeatherTextLabel.setFont(Fonts.weather);
         currentWeatherTextLabel.setForeground(Color.white);
 
         //空气质量标签
-        String airText = "┃" + "优";
+        String airText = "┃" + weatherMsg.getAir();
         airTextLabel.setText(airText);
         FontMetrics metricsAir = airTextLabel.getFontMetrics(Fonts.weather);
         int stringWidthAir = metricsAir.stringWidth(airText);  //计算文本宽度
@@ -190,9 +190,9 @@ public class OvertimeView extends JPanel {
         weatherIcon.setIcon(imageIcon);
         weatherIcon.setBounds(16,110, 90, 90);
 
-//        list = WeatherService.getWeatherList();
+        list = WeatherService.getWeatherList();
 
-        //小组件1今天标签
+//小组件1今天标签
         String todayString = "今天";
         todayTextLabel.setText(todayString);
         todayTextLabel.setFont(Fonts.weatherSmall);
@@ -201,7 +201,7 @@ public class OvertimeView extends JPanel {
         todayTextLabel.setBounds(16 + (139 - stringWidthTool1)/2, 350 + 30, 250, 50);
 
         //小组件1今天天气标签
-        todayString = 17 + "°/" + 26 + "°";
+        todayString = (int)list.get(0).getMin_temp() + "°/" + (int) list.get(0).getMax_temp() + "°";
         todayWeatherTextLabel.setText(todayString);
         todayWeatherTextLabel.setFont(Fonts.weather2);
         todayWeatherTextLabel.setForeground(Color.white);
@@ -221,7 +221,7 @@ public class OvertimeView extends JPanel {
         tomorrowTextLabel.setBounds(16 + 139 + (139 - stringWidthTool2)/2, 350 + 30, 250, 50);
 
         //小组件2明天天气标签
-        tomorrowString = 18 + "°/" + 25 + "°";
+        tomorrowString = (int)list.get(1).getMin_temp() + "°/" + (int) list.get(1).getMax_temp() + "°";
         tomorrowWeatherTextLabel.setText(tomorrowString);
         tomorrowWeatherTextLabel.setFont(Fonts.weather2);
         tomorrowWeatherTextLabel.setForeground(Color.white);
@@ -241,7 +241,7 @@ public class OvertimeView extends JPanel {
         afterTextLabel.setBounds(16 + 139 * 2 + (139 - stringWidthTool3)/2, 350 + 30, 250, 50);
 
         //小组件3后天天气标签
-        afterString = 18 + "°/" + 21 + "°";
+        afterString = (int)list.get(2).getMin_temp() + "°/" + (int) list.get(2).getMax_temp() + "°";
         afterWeatherTextLabel.setText(afterString);
         afterWeatherTextLabel.setFont(Fonts.weather2);
         afterWeatherTextLabel.setForeground(Color.white);
@@ -300,17 +300,17 @@ public class OvertimeView extends JPanel {
         };
         swingWorker.execute();
 
-//        //获取各种数据到mysql中
-//        try {
-//            // 创建MqttImageReceiver实例，连接到MQTT代理
-//            mqttImageReceiver = new MqttImageReceiver("tcp://192.168.1.100:1883");
-//            // 保持程序运行，以便接收消息
-//        } catch (MqttException e) {
-//            // 打印初始化MQTT客户端时的错误信息
-//            System.out.println("Error initializing MQTT client: " + e.getMessage());
-//            // 打印异常堆栈信息
-//            e.printStackTrace();
-//        }
+        //获取各种数据到mysql中
+        try {
+            // 创建MqttImageReceiver实例，连接到MQTT代理
+            mqttImageReceiver = new MqttImageReceiver("tcp://192.168.1.100:1883");
+            // 保持程序运行，以便接收消息
+        } catch (MqttException e) {
+            // 打印初始化MQTT客户端时的错误信息
+            System.out.println("Error initializing MQTT client: " + e.getMessage());
+            // 打印异常堆栈信息
+            e.printStackTrace();
+        }
 
         // 窗体设置
         setSize(960, 768);
@@ -320,8 +320,8 @@ public class OvertimeView extends JPanel {
     }
 
     private void toDoSomeThing(){
-//        weatherMsg = WeatherService.getCurrentWeather();
-//        list = WeatherService.getWeatherList();
+        weatherMsg = WeatherService.getCurrentWeather();
+        list = WeatherService.getWeatherList();
         repaint();
     }
 
@@ -329,46 +329,46 @@ public class OvertimeView extends JPanel {
      * 下拉菜单事件
      * @return ActionListener
      */
-//    private ActionListener pageChange() {
-//        return e -> {
-//            // 获取组合框下标
-//            int index = ComboBox.getSelectedIndex();
-//            switch (index) {
-//                case 0:
-//                    mqttImageReceiver.setCameraNum(0);
-//                    System.out.println(index);
-//                    break;
-//                case 1:
-//                    mqttImageReceiver.setCameraNum(1);
-//                    System.out.println(index);
-//                    break;
-//                case 2:
-//                    mqttImageReceiver.setCameraNum(2);
-//                    System.out.println(index);
-//                    break;
-//                case 3:
-//                    mqttImageReceiver.setCameraNum(3);
-//                    System.out.println(index);
-//                    break;
-//                case 4:
-//                    mqttImageReceiver.setCameraNum(4);
-//                    System.out.println(index);
-//                    break;
-//                case 5:
-//                    mqttImageReceiver.setCameraNum(5);
-//                    System.out.println(index);
-//                    break;
-//                case 6:
-//                    mqttImageReceiver.setCameraNum(6);
-//                    System.out.println(index);
-//                    break;
-//                case 7:
-//                    mqttImageReceiver.setCameraNum(7);
-//                    System.out.println(index);
-//                    break;
-//                default:
-//                    break;
-//            }
-//        };
-//    }
+    private ActionListener pageChange() {
+        return e -> {
+            // 获取组合框下标
+            int index = ComboBox.getSelectedIndex();
+            switch (index) {
+                case 0:
+                    mqttImageReceiver.setCameraNum(0);
+                    System.out.println(index);
+                    break;
+                case 1:
+                    mqttImageReceiver.setCameraNum(1);
+                    System.out.println(index);
+                    break;
+                case 2:
+                    mqttImageReceiver.setCameraNum(2);
+                    System.out.println(index);
+                    break;
+                case 3:
+                    mqttImageReceiver.setCameraNum(3);
+                    System.out.println(index);
+                    break;
+                case 4:
+                    mqttImageReceiver.setCameraNum(4);
+                    System.out.println(index);
+                    break;
+                case 5:
+                    mqttImageReceiver.setCameraNum(5);
+                    System.out.println(index);
+                    break;
+                case 6:
+                    mqttImageReceiver.setCameraNum(6);
+                    System.out.println(index);
+                    break;
+                case 7:
+                    mqttImageReceiver.setCameraNum(7);
+                    System.out.println(index);
+                    break;
+                default:
+                    break;
+            }
+        };
+    }
 }
