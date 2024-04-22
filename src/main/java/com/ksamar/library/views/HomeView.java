@@ -146,22 +146,12 @@ public class HomeView extends JPanel {
         ImageIcon imageIcon = Images.getImage(msg.getUrl());
         bookIconLabel.setIcon(imageIcon);
         bookIconLabel.setBounds((456-30-imageIcon.getIconWidth())/2, 0, 456-30, 425);
-//        // 图书数量文本标签
-//        bookTextLabel.setText(bookText);
-//        bookTextLabel.setBounds(144, 56, 274, 40);
-//        bookTextLabel.setFont(Fonts.pane);
-//        bookTextLabel.setForeground(Color.WHITE);
-//        bookTextLabel.setHorizontalAlignment(SwingConstants.RIGHT);
-//
-//        // 图书数量标签
-//        bookCountLabel.setBounds(144, 108, 274, 40);
-//        bookCountLabel.setFont(Fonts.pane);
-//        bookCountLabel.setForeground(Color.WHITE);
-//        bookCountLabel.setHorizontalAlignment(SwingConstants.RIGHT);
 
         //图片获取时间标签
-        imageTimeLabel.setText(msg.getAdd_time());
-        imageTimeLabel.setBounds(144, 0, 274, 40);
+        String s = msg.getUrl();
+        String[] strings = s.split("/");
+        imageTimeLabel.setText(strings[8]);
+        imageTimeLabel.setBounds(144, 0, 300, 40);
         imageTimeLabel.setFont(Fonts.time);
         imageTimeLabel.setForeground(Colour.C5AB556);
         imageTimeLabel.setHorizontalAlignment(SwingConstants.RIGHT);
@@ -202,19 +192,6 @@ public class HomeView extends JPanel {
 
         borrowIconLabel.setIcon(Images.borrowPaneIcon);
         borrowIconLabel.setBounds((456-20-imageIcon.getIconWidth())/2, 0 , 456-30, 425);
-
-//        // 借阅图书数量文本标签
-//        borrowTextLabel.setText(borrowText);
-//        borrowTextLabel.setBounds(144, 56, 274, 40);
-//        borrowTextLabel.setFont(Fonts.pane);
-//        borrowTextLabel.setForeground(Color.WHITE);
-//        borrowTextLabel.setHorizontalAlignment(SwingConstants.RIGHT);
-
-//        // 借阅图书数量标签
-//        borrowCountLabel.setBounds(144, 108, 274, 40);
-//        borrowCountLabel.setFont(Fonts.pane);
-//        borrowCountLabel.setForeground(Color.WHITE);
-//        borrowCountLabel.setHorizontalAlignment(SwingConstants.RIGHT);
 
         // 显示检测后图片面板
         borrowPanel.setLayout(null);
@@ -324,7 +301,9 @@ public class HomeView extends JPanel {
         ImageMsg msg = imageList.get(currentIndex);
         ImageIcon imageIcon = Images.getImage(msg.getUrl());
         bookIconLabel.setIcon(imageIcon); //下一张图
-        imageTimeLabel.setText(msg.getAdd_time()); //图的时间
+        String s = msg.getUrl();
+        String[] strings = s.split("/");
+        imageTimeLabel.setText(strings[8]);//图的时间
         bookIconLabel.setBounds((456-30-imageIcon.getIconWidth())/2, 0, 456-30, 425);
 
         //使检测结果消失

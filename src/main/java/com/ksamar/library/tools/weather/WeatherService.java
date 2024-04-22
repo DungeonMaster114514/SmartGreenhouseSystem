@@ -98,17 +98,20 @@ public class WeatherService {
             }
 
         } catch (IOException e) {
-        e.printStackTrace();
+            System.out.println("当前城市天气获取失败");
+            for (int i = 0 ; i < 3 ; i++) {
+                WeatherMsgTiny weatherMsgTiny = new WeatherMsgTiny(0, 0, "信息获取失败");
+                list.add(weatherMsgTiny);
+            }
         }
-
         return list;
     }
 
     // 测试方法
-    public static void main(String[] args) {
+//    public static void main(String[] args) {
 //        WeatherService service = new WeatherService();
 //        try {
-//             用实际的城市代码替换"cityCodeHere"
+////             用实际的城市代码替换"cityCodeHere"
 //            JSONObject weatherInfo = service.getWeatherInfo("58607");
 //
 //            System.out.println(weatherInfo.toString(4));
@@ -130,12 +133,12 @@ public class WeatherService {
 //            }
 //
 //        } catch (IOException e) {
-//            e.printStackTrace();
+//            System.out.println("天气获取失败");
 //        }
-
-            System.out.println(WeatherService.getCurrentWeather());
+//
+//            System.out.println(WeatherService.getCurrentWeather());
 //        for (WeatherMsgTiny weatherMsgTiny: getWeatherList()) {
 //            System.out.println(weatherMsgTiny);
 //        }
-    }
+//    }
 }

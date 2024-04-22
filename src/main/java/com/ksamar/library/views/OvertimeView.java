@@ -130,7 +130,7 @@ public class OvertimeView extends JPanel {
         ComboBox.addItem("七号大棚监控");
         ComboBox.setBackground(Color.WHITE);
         ComboBox.setFont(Fonts.comboBox);
-//        ComboBox.addActionListener(pageChange());
+        ComboBox.addActionListener(pageChange());
 
         //模拟视频播放图片
         ImageIcon imageIcon = Images.greenhouseIcon;
