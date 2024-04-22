@@ -11,7 +11,7 @@
  Target Server Version : 80033
  File Encoding         : 65001
 
- Date: 22/04/2024 09:06:08
+ Date: 22/04/2024 09:50:14
 */
 
 SET NAMES utf8mb4;
@@ -309,4 +309,35 @@ INSERT INTO `operationlist` VALUES (11, '2023-04-15 08:00:00', '张一', '检测
 DROP TABLE IF EXISTS `userlist`;
 CREATE TABLE `userlist`  (
   `id` int(0) NOT NULL AUTO_INCREMENT,
-  `groups` varchar(255) CHARACTER SET utf8mb3 CO
+  `groups` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL DEFAULT 'user',
+  `name` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL,
+  `username` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL DEFAULT '',
+  `password` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL DEFAULT '',
+  `gender` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL DEFAULT '',
+  `phone` varchar(11) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL DEFAULT '0',
+  `identity` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL DEFAULT '学生',
+  `state` int(0) NOT NULL DEFAULT 1,
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 17 CHARACTER SET = utf8mb3 COLLATE = utf8mb3_general_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of userlist
+-- ----------------------------
+INSERT INTO `userlist` VALUES (1, 'admin', '管理员', 'Admin', '123456', '男', '13700000000', '管理员', 1);
+INSERT INTO `userlist` VALUES (2, 'user', '张一', '张一', '123456', '男', '13700000001', '学生', 1);
+INSERT INTO `userlist` VALUES (3, 'user', '张二', '张二', '123456', '男', '13700000002', '学生', 1);
+INSERT INTO `userlist` VALUES (4, 'user', '张三', '张三', '123456', '男', '13700000003', '学生', 1);
+INSERT INTO `userlist` VALUES (5, 'user', '张四', '张四', '123456', '男', '13700000004', '学生', 1);
+INSERT INTO `userlist` VALUES (6, 'user', '张五', '张五', '123456', '男', '13700000005', '学生', 1);
+INSERT INTO `userlist` VALUES (7, 'user', '李一', '李一', '123456', '男', '13700000006', '老师', 1);
+INSERT INTO `userlist` VALUES (8, 'user', '李二', '李二', '123456', '男', '13700000007', '老师', 1);
+INSERT INTO `userlist` VALUES (9, 'user', '李三', '李三', '123456', '男', '13700000008', '老师', 1);
+INSERT INTO `userlist` VALUES (10, 'user', '李四', '李四', '123456', '男', '13700000009', '老师', 1);
+INSERT INTO `userlist` VALUES (11, 'user', '李五', '李五', '123456', '男', '13700000010', '老师', 1);
+INSERT INTO `userlist` VALUES (12, 'user', '赵一', '赵一', '123456', '男', '13700000011', '学生', 1);
+INSERT INTO `userlist` VALUES (13, 'user', '赵二', '赵二', '123456', '男', '13700000012', '学生', 1);
+INSERT INTO `userlist` VALUES (14, 'user', '赵三', '赵三', '123456', '男', '13700000013', '学生', 1);
+INSERT INTO `userlist` VALUES (15, 'user', '赵四', '赵四', '123456', '男', '13700000014', '学生', 1);
+INSERT INTO `userlist` VALUES (16, 'user', '赵五', '赵五', '123456', '男', '13700000015', '学生', 1);
+
+SET FOREIGN_KEY_CHECKS = 1;
