@@ -148,10 +148,8 @@ public class HomeView extends JPanel {
         bookIconLabel.setBounds((456-30-imageIcon.getIconWidth())/2, 0, 456-30, 425);
 
         //图片获取时间标签
-        String s = msg.getUrl();
-        String[] strings = s.split("/");
-        imageTimeLabel.setText(strings[8]);
-        imageTimeLabel.setBounds(144, 0, 300, 40);
+        imageTimeLabel.setText(msg.getAdd_time());
+        imageTimeLabel.setBounds(144, 0, 274, 40);
         imageTimeLabel.setFont(Fonts.time);
         imageTimeLabel.setForeground(Colour.C5AB556);
         imageTimeLabel.setHorizontalAlignment(SwingConstants.RIGHT);
@@ -301,9 +299,7 @@ public class HomeView extends JPanel {
         ImageMsg msg = imageList.get(currentIndex);
         ImageIcon imageIcon = Images.getImage(msg.getUrl());
         bookIconLabel.setIcon(imageIcon); //下一张图
-        String s = msg.getUrl();
-        String[] strings = s.split("/");
-        imageTimeLabel.setText(strings[8]);//图的时间
+        imageTimeLabel.setText(msg.getAdd_time()); //图的时间
         bookIconLabel.setBounds((456-30-imageIcon.getIconWidth())/2, 0, 456-30, 425);
 
         //使检测结果消失

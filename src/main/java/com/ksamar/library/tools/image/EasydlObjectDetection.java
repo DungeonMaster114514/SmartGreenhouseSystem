@@ -34,7 +34,7 @@ public class EasydlObjectDetection {
     */
     public static String easydlObjectDetection(String base64Image) {
         // 请求url
-        String url = "https://aip.baidubce.com/rpc/2.0/ai_custom/v1/detection/strawberryDec";
+        String url = "https://aip.baidubce.com/rpc/2.0/ai_custom/v1/detection/cmdection";
         try {
             Map<String, Object> map = new HashMap<>();
             map.put("image", base64Image);
@@ -42,7 +42,7 @@ public class EasydlObjectDetection {
             String param = GsonUtils.toJson(map);
 
             // 注意这里仅为了简化编码每一次请求都去获取access_token，线上环境access_token有过期时间， 客户端可自行缓存，过期后重新获取。
-            String accessToken = "24.3bbbc01680c13bc7cffed8b87e3560ff.2592000.1715428145.282335-60899602";
+            String accessToken = "24.3f25f4f05f5a25053dd7b1b512eb4aa8.2592000.1716192438.282335-62425088";
 
             String result = HttpUtil.post(url, accessToken, "application/json", param);
             return result;
