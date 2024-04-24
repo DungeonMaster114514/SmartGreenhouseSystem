@@ -1,22 +1,18 @@
 package com.ksamar.library.tools.image;
 
-import com.baidu.ai.aip.utils.HttpUtil;
 import com.baidu.ai.aip.utils.GsonUtils;
-import java.io.IOException;
+import com.baidu.ai.aip.utils.HttpUtil;
+import org.json.JSONException;
+import org.json.JSONObject;
 
-import java.util.*;
+import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
-import java.util.List;
-import javax.imageio.ImageIO;
-import javax.swing.*;
+import java.util.HashMap;
+import java.util.Map;
 
-import com.ksamar.library.controller.ImageController;
-import com.ksamar.library.entity.ImageMsg;
-import org.json.JSONException;
-import org.json.JSONObject;
 /**
 * easydl物体检测
 */
@@ -151,7 +147,8 @@ public class EasydlObjectDetection {
             JSONObject detectionResults = new JSONObject(result);
             BufferedImage annotatedImage = drawDetectionResults(ImageIO.read(new File(imagePath)), detectionResults);
             // 保存带有边界框的图像
-            ImageIO.write(annotatedImage, "jpg", new File("D:\\BaiduNetdiskDownload\\data\\valid\\detection\\train4_0300_detected" + id +".jpg"));
+            String userDir = System.getProperty("user.dir");
+            ImageIO.write(annotatedImage, "jpg", new File(userDir + "/src/main/java/com/ksamar/library/image_result/train4_0300_detected" + id +".jpg"));
         } catch (IOException e) {
             e.printStackTrace();
         }
