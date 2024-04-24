@@ -1,0 +1,589 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="f3d2f05a-fac4-447d-a795-588c875949fe" name="更改" comment="智慧大棚系统">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/beautyeye_lnf__3_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/beautyeye_lnf__4_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/$PROJECT_FILE$" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/Library_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/checkstyle-idea.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/beautyeye_lnf.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/beautyeye_lnf.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/beautyeye_lnf__2_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/beautyeye_lnf__2_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/beautyeye_lnf___2_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/beautyeye_lnf___3_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/beautyeye_lnf___4_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/djnativeswing.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/gson_2_8_4.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/mysql_connector_j_8_0_33.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/org_eclipse_paho_client_mqttv3_1_2_5.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/org_eclipse_swt_win32_win32_x86_64_4_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/qaplug_profiles.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/7/077ce9ebd552fc33605b20acd3a9fdf44a794c2c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/a/0ac14ab19a84861a728d7a944c67bd8d34f2ec02" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/a/1a2be65d9db704134acffaf75be5b02180f868d7" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/b/1b54cab1a8ba8ba4654dc6aa8961e7373e9eaa09" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/3/23b19b5c4557f13e8a0f6f42c6959937c54da62d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/7/2714985892047d7ca4aa3ca5684575e57e0c1f6c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/7/27fee0bb65c98f3561de4c82a42db107d4c1ee79" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/2/3299b1d73102c30425c0aeba470053cd6a976375" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/f/3fd14cb07c7e4f1ac6c182882998eaf8ef1e8efb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/2/42b51ac8348928437a1fceffa78dd3b0e07a9d4a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/3/436b712644ecc95d82482a1b61a6221102f5a959" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/9/4911f00255e3d3eebc16e394c1c6cb7e8d2558de" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/9/4959e467862f7f3afd14660eac86a1b477e01903" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/4/547c7f32fcad0cdf6fc9643f3c1ed40b558cc871" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/9/5953fc010b62f805c4c2b8d0037ded3bc63c0721" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/a/6a3ca43c8aaef14d3d003bc02dde70f073c2e394" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/c/6c98043198d2bb793c9be554843fc7f523c99fa3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/f/6f8f911b03c1f5af4c26078e6b984757f77d62d8" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/7/778d56e37a3932af49970bc573b6373770d2cff1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/8/78137c3a24984b1f2ec1e8ca10588f5cefb8c06b" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/d/7d256991342d4fae6a647aca05ccd7e0ffe33325" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/0/80ff43a6c28bc667fc7406c96d2ceb52b4a4bb79" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/3/83288b2242e3735f0ca8986dbbe7f1443cb2e700" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/6/86f36eca4ca3f69631b78249defb77d563248ee0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/b/8b76ff4061f55498c576cd27ba8ca1001edd6226" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/c/8c53e460167bc57a776d6f757ba40c98febb321a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/f/8f0f6bd5ebd0dc9c226a7f2a0d8071b01ca6a522" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/2/92be4e3dc1a036468e8d8986fa1ea6af0e671341" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/c/9ce60f25391092724230262e5331db2685963f54" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/e/9e301e5cc6b3d834eeac6fa560bc4c64f30d534a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/c/ac676ff038b40e574613e60bd54cc56c3c9b8927" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/e/aedfd4e62b5b27de5e3a26fa1a15bafc1ac4066a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/4/c4a465b7332ada735554615736cd377d44e673b3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/a/ca2056b024065035b36429d5460733a684218b4e" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/3/d3aea8ab9ba4e00446b77a8098bd3dd7b4cf7fb3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/3/e304b89cd0fc8f94faa9b8e86e43cf06ba1ac80b" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/e/ee03257724071a77c1e8ac98697a583c95307f86" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/5/f5d90c990d46953a28c7b2f550fb4c8bcaba7752" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library.iml" beforeDir="false" afterPath="$PROJECT_DIR$/SmartGreenhouseSystem4.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sql/javaswing_bookmanagement.sql" beforeDir="false" afterPath="$PROJECT_DIR$/sql/javaswing_bookmanagement.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ksamar/library/images/book_focus.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ksamar/library/images/book_focus.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ksamar/library/images/borrow_focus.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ksamar/library/images/borrow_focus.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ksamar/library/images/home_focus.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ksamar/library/images/home_focus.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ksamar/library/images/overtime_focus.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ksamar/library/images/overtime_focus.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ksamar/library/images/return_focus.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ksamar/library/images/return_focus.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ksamar/library/images/setting_focus.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ksamar/library/images/setting_focus.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ksamar/library/images/user_focus.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ksamar/library/images/user_focus.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ksamar/library/images/weather.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ksamar/library/images/weather.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ksamar/library/images/weather_bg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ksamar/library/images/weather_bg2.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ksamar/library/images/weather_bg2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ksamar/library/tools/color/Colour.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ksamar/library/tools/color/Colour.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ksamar/library/tools/dashdoard/Tick.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ksamar/library/tools/dashdoard/Tick.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ksamar/library/tools/image/EasydlObjectDetection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ksamar/library/tools/image/EasydlObjectDetection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ksamar/library/tools/sql/SqlConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ksamar/library/tools/sql/SqlConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ksamar/library/views/BorrowView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ksamar/library/views/BorrowView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ksamar/library/tools/color/Colour.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ksamar/library/tools/color/Colour.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ksamar/library/tools/dashdoard/Tick.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ksamar/library/tools/dashdoard/Tick.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ksamar/library/tools/image/EasydlObjectDetection.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ksamar/library/tools/image/EasydlObjectDetection.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ksamar/library/views/BorrowView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ksamar/library/views/BorrowView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/java/com/ksamar/library/images/book_focus.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/java/com/ksamar/library/images/book_focus.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/java/com/ksamar/library/images/borrow_focus.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/java/com/ksamar/library/images/borrow_focus.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/java/com/ksamar/library/images/home_focus.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/java/com/ksamar/library/images/home_focus.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/java/com/ksamar/library/images/overtime_focus.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/java/com/ksamar/library/images/overtime_focus.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/java/com/ksamar/library/images/return_focus.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/java/com/ksamar/library/images/return_focus.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/java/com/ksamar/library/images/setting_focus.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/java/com/ksamar/library/images/setting_focus.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/java/com/ksamar/library/images/user_focus.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/java/com/ksamar/library/images/user_focus.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/java/com/ksamar/library/images/weather.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/java/com/ksamar/library/images/weather.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/java/com/ksamar/library/images/weather_bg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/java/com/ksamar/library/images/weather_bg2.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/java/com/ksamar/library/images/weather_bg2.png" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="cc4d9400-32e8-4d8d-89a7-a73f5edfb761" />
+        <option name="url" value="https://github.com/DungeonMaster114514/SmartGreenhouseSystem.git" />
+      </UrlAndAccount>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="2ejHPnr78NPoeZM00qWHhTgCovz" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/IdeaProjects/SmartGreenhouseSystem4/src/main/java/com/ksamar/library/images",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "模块",
+    "project.structure.proportion": "0.15332031",
+    "project.structure.side.proportion": "0.31177828",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
+    ]
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\IdeaProjects\SmartGreenhouseSystem4\src\main\java\com\ksamar\library\images" />
+      <recent name="C:\IdeaProjects\Library2\src\main\java\com\ksamar\library\images" />
+      <recent name="C:\IdeaProjects\Library\sql" />
+      <recent name="C:\IdeaProjects\Library\src\main\java\com\ksamar\library\images_check" />
+      <recent name="C:\IdeaProjects\Library\lib" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\IdeaProjects\Library\src\main\java\com\ksamar\library\tools\image" />
+      <recent name="C:\IdeaProjects\Library\src\com\ksamar\library\images" />
+    </key>
+  </component>
+  <component name="RunManager" selected="应用程序.Application">
+    <configuration name="Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.ksamar.library.Application" />
+      <module name="SmartGreenhouseSystem4" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ksamar.library.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LineChart" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.ksamar.library.tools.dashdoard.LineChart" />
+      <module name="SmartGreenhouseSystem4" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ksamar.library.tools.dashdoard.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.ksamar.library.tools.sensor.Main" />
+      <module name="SmartGreenhouseSystem4" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ksamar.library.tools.sensor.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="WeatherService" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.ksamar.library.tools.weather.WeatherService" />
+      <module name="SmartGreenhouseSystem4" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ksamar.library.tools.weather.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="com.ksamar.library.tools.video.MediaDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.ksamar.library.tools.video.MediaDemo" />
+      <module name="SmartGreenhouseSystem4" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ksamar.library.tools.video.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="应用程序.Application" />
+        <item itemvalue="应用程序.WeatherService" />
+        <item itemvalue="应用程序.Main" />
+        <item itemvalue="应用程序.LineChart" />
+        <item itemvalue="应用程序.com.ksamar.library.tools.video.MediaDemo" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="默认任务">
+      <changelist id="f3d2f05a-fac4-447d-a795-588c875949fe" name="更改" comment="" />
+      <created>1712411046162</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1712411046162</updated>
+      <workItem from="1712411047170" duration="1547000" />
+      <workItem from="1712426149148" duration="3295000" />
+      <workItem from="1712454387293" duration="7000" />
+      <workItem from="1712660944461" duration="302000" />
+      <workItem from="1712661660363" duration="13004000" />
+      <workItem from="1712715319933" duration="15320000" />
+      <workItem from="1712733493069" duration="17526000" />
+      <workItem from="1712795191698" duration="9850000" />
+      <workItem from="1712810124264" duration="3493000" />
+      <workItem from="1712815155619" duration="14274000" />
+      <workItem from="1712881360886" duration="12294000" />
+      <workItem from="1712901486131" duration="4868000" />
+      <workItem from="1712908526570" duration="16038000" />
+      <workItem from="1713017972446" duration="1050000" />
+      <workItem from="1713092445997" duration="7177000" />
+      <workItem from="1713146942485" duration="38073000" />
+      <workItem from="1713312826759" duration="1257000" />
+      <workItem from="1713333893511" duration="3653000" />
+      <workItem from="1713349206044" duration="12335000" />
+      <workItem from="1713414531726" duration="2811000" />
+      <workItem from="1713420058492" duration="9044000" />
+      <workItem from="1713433857698" duration="11000" />
+      <workItem from="1713433885092" duration="16525000" />
+      <workItem from="1713489329597" duration="7256000" />
+      <workItem from="1713506333002" duration="23131000" />
+      <workItem from="1713538022629" duration="4694000" />
+      <workItem from="1713609279547" duration="7302000" />
+      <workItem from="1713617451696" duration="1227000" />
+      <workItem from="1713618687902" duration="222000" />
+      <workItem from="1713618927628" duration="2730000" />
+      <workItem from="1713685419294" duration="24814000" />
+      <workItem from="1713732982534" duration="4313000" />
+      <workItem from="1713746876415" duration="4142000" />
+      <workItem from="1713753559458" duration="12351000" />
+      <workItem from="1713787557373" duration="310000" />
+      <workItem from="1713787906752" duration="181000" />
+      <workItem from="1713788101222" duration="175000" />
+      <workItem from="1713789416340" duration="2159000" />
+      <workItem from="1713879561309" duration="1860000" />
+      <workItem from="1713943055902" duration="772000" />
+      <workItem from="1713944385791" duration="37000" />
+      <workItem from="1713944443720" duration="1859000" />
+      <workItem from="1713946362918" duration="777000" />
+      <workItem from="1713947183763" duration="1752000" />
+      <workItem from="1713949102109" duration="2954000" />
+    </task>
+    <task id="LOCAL-00001" summary="智慧大棚系统">
+      <option name="closed" value="true" />
+      <created>1713180406838</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1713180406838</updated>
+    </task>
+    <task id="LOCAL-00002" summary="智慧大棚系统">
+      <option name="closed" value="true" />
+      <created>1713180672079</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1713180672079</updated>
+    </task>
+    <task id="LOCAL-00003" summary="智慧大棚系统">
+      <option name="closed" value="true" />
+      <created>1713237735545</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1713237735545</updated>
+    </task>
+    <task id="LOCAL-00004" summary="智慧大棚系统">
+      <option name="closed" value="true" />
+      <created>1713350977240</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1713350977240</updated>
+    </task>
+    <task id="LOCAL-00005" summary="智慧大棚系统">
+      <option name="closed" value="true" />
+      <created>1713355301756</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1713355301756</updated>
+    </task>
+    <task id="LOCAL-00006" summary="智慧大棚系统">
+      <option name="closed" value="true" />
+      <created>1713416826029</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1713416826029</updated>
+    </task>
+    <task id="LOCAL-00007" summary="智慧大棚系统">
+      <option name="closed" value="true" />
+      <created>1713430399149</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1713430399149</updated>
+    </task>
+    <task id="LOCAL-00008" summary="智慧大棚系统">
+      <option name="closed" value="true" />
+      <created>1713432447470</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1713432447470</updated>
+    </task>
+    <task id="LOCAL-00009" summary="智慧大棚系统">
+      <option name="closed" value="true" />
+      <created>1713434259375</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1713434259376</updated>
+    </task>
+    <task id="LOCAL-00010" summary="智慧大棚系统">
+      <option name="closed" value="true" />
+      <created>1713434270051</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1713434270051</updated>
+    </task>
+    <task id="LOCAL-00011" summary="智慧大棚系统">
+      <option name="closed" value="true" />
+      <created>1713441426091</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1713441426091</updated>
+    </task>
+    <task id="LOCAL-00012" summary="智慧大棚系统">
+      <option name="closed" value="true" />
+      <created>1713494294715</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1713494294715</updated>
+    </task>
+    <task id="LOCAL-00013" summary="智慧大棚系统">
+      <option name="closed" value="true" />
+      <created>1713513471582</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1713513471582</updated>
+    </task>
+    <task id="LOCAL-00014" summary="智慧大棚系统">
+      <option name="closed" value="true" />
+      <created>1713528077054</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1713528077054</updated>
+    </task>
+    <task id="LOCAL-00015" summary="智慧大棚系统">
+      <option name="closed" value="true" />
+      <created>1713529897603</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1713529897603</updated>
+    </task>
+    <task id="LOCAL-00016" summary="智慧大棚系统">
+      <option name="closed" value="true" />
+      <created>1713609304508</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1713609304508</updated>
+    </task>
+    <task id="LOCAL-00017" summary="智慧大棚系统">
+      <option name="closed" value="true" />
+      <created>1713614004538</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1713614004538</updated>
+    </task>
+    <task id="LOCAL-00018" summary="智慧大棚系统">
+      <option name="closed" value="true" />
+      <created>1713690851690</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1713690851691</updated>
+    </task>
+    <task id="LOCAL-00019" summary="智慧大棚系统">
+      <option name="closed" value="true" />
+      <created>1713692658774</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1713692658774</updated>
+    </task>
+    <task id="LOCAL-00020" summary="智慧大棚系统">
+      <option name="closed" value="true" />
+      <created>1713693807751</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1713693807751</updated>
+    </task>
+    <task id="LOCAL-00021" summary="智慧大棚系统">
+      <option name="closed" value="true" />
+      <created>1713700109787</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1713700109787</updated>
+    </task>
+    <task id="LOCAL-00022" summary="智慧大棚系统">
+      <option name="closed" value="true" />
+      <created>1713701068166</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1713701068166</updated>
+    </task>
+    <task id="LOCAL-00023" summary="智慧大棚系统">
+      <option name="closed" value="true" />
+      <created>1713747075814</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1713747075814</updated>
+    </task>
+    <task id="LOCAL-00024" summary="智慧大棚系统">
+      <option name="closed" value="true" />
+      <created>1713748049240</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1713748049240</updated>
+    </task>
+    <task id="LOCAL-00025" summary="智慧大棚系统">
+      <option name="closed" value="true" />
+      <created>1713750703336</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1713750703336</updated>
+    </task>
+    <task id="LOCAL-00026" summary="智慧大棚系统">
+      <option name="closed" value="true" />
+      <created>1713771559829</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1713771559829</updated>
+    </task>
+    <task id="LOCAL-00027" summary="智慧大棚系统">
+      <option name="closed" value="true" />
+      <created>1713771648940</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1713771648940</updated>
+    </task>
+    <task id="LOCAL-00028" summary="智慧大棚系统">
+      <option name="closed" value="true" />
+      <created>1713773778198</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1713773778198</updated>
+    </task>
+    <task id="LOCAL-00029" summary="智慧大棚系统">
+      <option name="closed" value="true" />
+      <created>1713774078179</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1713774078179</updated>
+    </task>
+    <task id="LOCAL-00030" summary="智慧大棚系统">
+      <option name="closed" value="true" />
+      <created>1713788012514</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1713788012514</updated>
+    </task>
+    <task id="LOCAL-00031" summary="智慧大棚系统">
+      <option name="closed" value="true" />
+      <created>1713788162789</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1713788162789</updated>
+    </task>
+    <task id="LOCAL-00032" summary="智慧大棚系统">
+      <option name="closed" value="true" />
+      <created>1713943305633</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1713943305633</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="智慧大棚系统" />
+    <option name="LAST_COMMIT_MESSAGE" value="智慧大棚系统" />
+  </component>
+</project>
