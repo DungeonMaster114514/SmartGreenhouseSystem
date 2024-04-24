@@ -151,26 +151,10 @@ public class EasydlObjectDetection {
             JSONObject detectionResults = new JSONObject(result);
             BufferedImage annotatedImage = drawDetectionResults(ImageIO.read(new File(imagePath)), detectionResults);
             // 保存带有边界框的图像
-            ImageIO.write(annotatedImage, "jpg", new File("D:\\BaiduNetdiskDownload\\data\\valid\\detection\\train4_0300_detected" + id +".jpg"));
+            String userDir = System.getProperty("user.dir");
+            ImageIO.write(annotatedImage, "jpg", new File(userDir + "/src/main/java/com/ksamar/library/image_result/train4_0300_detected" + id +".jpg"));
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }
-
-    public static void main(String[] args) throws JSONException {
-        List<ImageMsg> imageList = ImageController.imageGetMsg();
-        ImageMsg msg = imageList.get(5);
-    	 String imagePath = msg.getUrl(); // 图片的路径
-    	 try {
-    	        String base64Image = ImageToBase64Converter.encodeImageToBase64(imagePath);
-    	        String result = EasydlObjectDetection.easydlObjectDetection(base64Image);
-    	        // 解析API返回的JSON结果
-                JSONObject detectionResults = new JSONObject(result);
-                BufferedImage annotatedImage = drawDetectionResults(ImageIO.read(new File(imagePath)), detectionResults);
-                // 保存带有边界框的图像
-                ImageIO.write(annotatedImage, "jpg", new File("D:\\BaiduNetdiskDownload\\data\\valid\\detection\\train4_0300_detected.jpg"));   
-    	 } catch (IOException e) {
-    	        e.printStackTrace();
-         }
     }
 }

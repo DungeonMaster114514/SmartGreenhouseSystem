@@ -345,7 +345,8 @@ public class HomeView extends JPanel {
     }
 
     public void displayDetectionResult(){
-        String url = "D:\\BaiduNetdiskDownload\\data\\valid\\detection\\train4_0300_detected" + imageList.get(currentIndex).getId() +".jpg";
+        String userDir = System.getProperty("user.dir");
+        String url = userDir + "/src/main/java/com/ksamar/library/image_result/train4_0300_detected" + imageList.get(currentIndex).getId() +".jpg";
         ImageIcon icon = Images.getImage(url);
         borrowIconLabel.setIcon(icon);
         borrowIconLabel.setBounds((456-20-icon.getIconWidth())/2, 0 , 456-30, 425);
