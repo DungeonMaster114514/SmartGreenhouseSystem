@@ -166,7 +166,7 @@ public class Tick extends JPanel{
         }
 
         //设置仪表盘字体颜色
-        g2.setColor(Colour.C3C8CE7);
+        g2.setColor(Colour.C32A100);
 
         if (to > from) {
             if (major > 0) {
